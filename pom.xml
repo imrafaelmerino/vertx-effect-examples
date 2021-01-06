@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.imrafaelmerino</groupId>
+    <artifactId>vertx-effect-examples</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <modules>
+        <module>signup</module>
+    </modules>
+    <name>vertx-effect</name>
+    <description>Examples using vertx-effect library</description>
+    <url>https://github.com/imrafaelmerino/vertx-effect-examples</url>
+
+    <developers>
+        <developer>
+            <id>imrafaelmerino</id>
+            <name>Rafael Merino García</name>
+            <email>imrafael.merino@gmail.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://github.com/imrafaelmerino/vertx-effect.git</url>
+    </scm>
+
+    <properties>
+        <NEXUS-STAGING-MAVEN-PLUGIN.VERSION>1.6.8</NEXUS-STAGING-MAVEN-PLUGIN.VERSION>
+        <MAVEN-GPG-PLUGIN.VERSION>1.6</MAVEN-GPG-PLUGIN.VERSION>
+        <JACOCO-MAVEN-PLUGIN.VERSION>0.8.4</JACOCO-MAVEN-PLUGIN.VERSION>
+        <MAVEN-JAVADOC-PLUGIN.VERSION>3.1.1</MAVEN-JAVADOC-PLUGIN.VERSION>
+        <MAVEN-SOURCE-PLUGIN.VERSION>3.0.1</MAVEN-SOURCE-PLUGIN.VERSION>
+        <MAVEN-SUREFIRE-PLUGIN.VERSION>2.22.0</MAVEN-SUREFIRE-PLUGIN.VERSION>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <MAVEN-COMPILER-PLUGIN.VERSION>3.1</MAVEN-COMPILER-PLUGIN.VERSION>
+        <MAVEN-COMPILER-PLUGIN.SOURCE>11</MAVEN-COMPILER-PLUGIN.SOURCE>
+        <MAVEN-COMPILER-PLUGIN.TARGET>11</MAVEN-COMPILER-PLUGIN.TARGET>
+        <VERTX-VERSION>4.0.0</VERTX-VERSION>
+        <JSON-VALUES.VERSION>8.4.0</JSON-VALUES.VERSION>
+        <MAVEN-JAR-PLUGIN.VERSION>3.2.0</MAVEN-JAR-PLUGIN.VERSION>
+        <VERTX-EFFECT.VERSION>1.0.0-RC3</VERTX-EFFECT.VERSION>
+        <VERTX-MONGODB-EFFECT.VERSION>1.0.0</VERTX-MONGODB-EFFECT.VERSION>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${MAVEN-COMPILER-PLUGIN.VERSION}</version>
+                <configuration>
+                    <source>${MAVEN-COMPILER-PLUGIN.SOURCE}</source>
+                    <target>${MAVEN-COMPILER-PLUGIN.TARGET}</target>
+                    <showWarnings>true</showWarnings>
+                    <compilerArgs>
+                        <arg>-Xlint:all</arg>
+                        <arg>-Xlint:unchecked</arg>
+                    </compilerArgs>
+                </configuration>
+
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${MAVEN-SUREFIRE-PLUGIN.VERSION}</version>
+                <configuration>
+                    <argLine>-XX:+FlightRecorder -XX:StartFlightRecording=duration=180s,filename=vertx-effect-examples-recording.jfr</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+
+        <dependency>
+            <groupId>com.github.imrafaelmerino</groupId>
+            <artifactId>json-values</artifactId>
+            <version>${JSON-VALUES.VERSION}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.imrafaelmerino</groupId>
+            <artifactId>vertx-mongodb-effect</artifactId>
+            <version>${VERTX-MONGODB-EFFECT.VERSION}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.imrafaelmerino</groupId>
+            <artifactId>vertx-effect</artifactId>
+            <version>${VERTX-EFFECT.VERSION}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-junit5</artifactId>
+            <version>${VERTX-VERSION}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.6.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.29</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+</project>
