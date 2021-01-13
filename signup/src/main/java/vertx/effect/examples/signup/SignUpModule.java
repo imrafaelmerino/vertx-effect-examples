@@ -3,16 +3,14 @@ package vertx.effect.examples.signup;
 import jsonvalues.JsObj;
 import vertx.effect.Validators;
 import vertx.effect.VertxModule;
+import vertx.effect.examples.FunctionsModule;
 import vertx.effect.examples.signup.email.SendEmailModule;
 import vertx.effect.examples.signup.geocode.GeolocationModule;
 import vertx.effect.examples.signup.mongodb.ClientDAOModule;
-import vertx.effect.exp.Cons;
 import vertx.effect.λ;
 
-import java.time.Instant;
-
 import static java.util.Objects.requireNonNull;
-import static vertx.effect.examples.signup.Client.CLIENT_SPEC;
+import static vertx.effect.examples.signup.ClientEntity.CLIENT_SPEC;
 
 
 /**
@@ -29,51 +27,48 @@ public class SignUpModule extends VertxModule {
     private final SendEmailModule emailModule;
     private final GeolocationModule geolocationModule;
     private final ClientDAOModule clientModule;
-    private static final String VALIDATE_AND_SIGNUP_ADDRESS = "validate_and_signup";
+    private final FunctionsModule functionsModule;
+    private final String validateAddress;
+    private final String signupAddress;
 
-    public SignUpModule(final SendEmailModule emailModule,
-                        final GeolocationModule geolocationModule,
-                        final ClientDAOModule clientModule) {
+
+    SignUpModule(final SendEmailModule emailModule,
+                 final GeolocationModule geolocationModule,
+                 final ClientDAOModule clientModule,
+                 final FunctionsModule functionsModule,
+                 final String validateAddress,
+                 final String signupAddress) {
         this.emailModule = requireNonNull(emailModule);
         this.geolocationModule = requireNonNull(geolocationModule);
         this.clientModule = requireNonNull(clientModule);
+        this.validateAddress = requireNonNull(validateAddress);
+        this.signupAddress = requireNonNull(signupAddress);
+        this.functionsModule = requireNonNull(functionsModule);
     }
 
-    public λ<JsObj, JsObj> validateAndSignUp;
-
-
-    λ<Void, Instant> getTimestamp = nill -> Cons.success(Instant.now());
+    public λ<JsObj, JsObj> validate;
+    public λ<JsObj, JsObj> signup;
 
 
     @Override
     protected void deploy() {
+        deploy(validateAddress,
+               Validators.validateJsObj(CLIENT_SPEC));
 
-        λ<JsObj, JsObj> validate = Validators.validateJsObj(CLIENT_SPEC);
-
-        deploy("validate",
-               validate);
-
-        final λ<JsObj, JsObj> signup =
-                new SignUpLambdaBuilder().setCount(clientModule.countAll)
-                                         .setFindByEmail(clientModule.findByEmail)
-                                         .setGetAddresses(geolocationModule.getAddresses)
-                                         .setGetTimestamp(getTimestamp)
-                                         .setInsert(clientModule.insert)
-                                         .setSendEmail(emailModule.sendEmail)
-                                         .createSignUpLambda();
-
-        deploy("signup",
-               signup);
-
-        deploy(VALIDATE_AND_SIGNUP_ADDRESS,
-               validate.andThen(signup));
-
-
+        deploy(signupAddress,
+               new SignUpLambdaBuilder().setCount(clientModule.countAll)
+                                        .setFindByEmail(clientModule.findByEmail)
+                                        .setGetAddresses(geolocationModule.getAddresses)
+                                        .setGetTimestamp(functionsModule.getTimestamp)
+                                        .setInsert(clientModule.insert)
+                                        .setSendEmail(emailModule.sendEmail)
+                                        .createSignUpLambda());
     }
 
     @Override
     protected void initialize() {
-        validateAndSignUp = ask(VALIDATE_AND_SIGNUP_ADDRESS);
+        validate = ask(validateAddress);
+        signup = ask(signupAddress);
     }
 
 }

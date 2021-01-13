@@ -17,20 +17,24 @@ public class SendEmailModuleBuilder {
     private String from;
     private String fromName;
     private String configSet;
-    private String address;
+    private String sendEmailAddress = "send-email";
+    private String validateEmailAddress = "validate-email";
     private int instances = 1;
 
     private Function<Integer, RetryPolicy<Throwable>> retryPolicy =
-            attempts -> (remaining, Throwable) -> Cons.NULL;
+            attempts -> (remaining, error) -> Cons.NULL;
 
     private int failureAttempts=3;
 
 
-    public SendEmailModuleBuilder setAddress(final String address) {
-        this.address = requireNonNull(address);
+    public SendEmailModuleBuilder setSendEmailAddress(final String sendEmailAddress) {
+        this.sendEmailAddress = requireNonNull(sendEmailAddress);
         return this;
     }
-
+    public SendEmailModuleBuilder setValidateEmailAddress(final String validateEmailAddress) {
+        this.validateEmailAddress = requireNonNull(validateEmailAddress);
+        return this;
+    }
     public SendEmailModuleBuilder setRetryPolicy(Function<Integer, RetryPolicy<Throwable>> retryPolicy) {
         this.retryPolicy = requireNonNull(retryPolicy);
         return this;
@@ -90,9 +94,18 @@ public class SendEmailModuleBuilder {
                                    fromName,
                                    configSet,
                                    instances,
-                                   address,
+                                   validateEmailAddress,
+                                   sendEmailAddress,
                                    failureAttempts,
                                    retryPolicy
         );
+    }
+
+    public String getSendEmailAddress() {
+        return sendEmailAddress;
+    }
+
+    public String getValidateEmailAddress() {
+        return validateEmailAddress;
     }
 }

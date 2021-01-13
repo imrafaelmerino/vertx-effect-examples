@@ -1,4 +1,4 @@
-package vertx.effect.examples.signup.httpreq;
+package vertx.effect.examples.httpreq;
 
 import jsonvalues.JsObj;
 import vertx.effect.*;
@@ -14,7 +14,7 @@ public class ResilientGet<O> implements λ<String, O> {
 
     private final λc<GetReq, JsObj> get;
     private final int failureAttempts;
-    private final int not200Attempts;
+    private final int not2XXAttempts;
     private final Function<Integer, RetryPolicy<Throwable>> retryPolicy;
     private final int reqTimeout;
     private final String uri;
@@ -22,14 +22,14 @@ public class ResilientGet<O> implements λ<String, O> {
 
     public ResilientGet(final λc<GetReq, JsObj> get,
                         final int failureAttempts,
-                        final int not200Attempts,
+                        final int not2XXAttempts,
                         final Function<Integer, RetryPolicy<Throwable>> retryPolicy,
                         final int reqTimeout,
                         final String uri,
                         final λ<JsObj,O> mapResp) {
         this.get = get;
         this.failureAttempts = failureAttempts;
-        this.not200Attempts = not200Attempts;
+        this.not2XXAttempts = not2XXAttempts;
         this.retryPolicy = retryPolicy;
         this.reqTimeout = reqTimeout;
         this.uri = uri;
@@ -56,7 +56,7 @@ public class ResilientGet<O> implements λ<String, O> {
                                        Integer statusCode = STATUS_CODE_LENS.get.apply(resp);
                                        return statusCode >= 300 || statusCode < 200;
                                    },
-                                   not200Attempts
+                                   not2XXAttempts
                                   )
                        .flatMap(mapResp);
     }

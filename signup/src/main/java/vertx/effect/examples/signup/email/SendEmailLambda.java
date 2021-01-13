@@ -15,8 +15,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.util.Objects;
 import java.util.Properties;
 
+import static java.util.Objects.requireNonNull;
 import static javax.mail.Message.RecipientType.TO;
 
 class SendEmailLambda implements λ<JsObj, Void> {
@@ -37,12 +39,12 @@ class SendEmailLambda implements λ<JsObj, Void> {
                            final String from,
                            final String fromName,
                            final String configSet) {
-        this.host = host;
-        this.props = props;
-        this.user = user;
-        this.password = password;
-        this.from = from;
-        this.fromName = fromName;
+        this.host = requireNonNull(host);
+        this.props = requireNonNull(props);
+        this.user = requireNonNull(user);
+        this.password = requireNonNull(password);
+        this.from = requireNonNull(from);
+        this.fromName = requireNonNull(fromName);
         this.configSet = configSet;
     }
 
@@ -59,11 +61,11 @@ class SendEmailLambda implements λ<JsObj, Void> {
                                             fromName)
             );
             msg.setRecipient(TO,
-                             new InternetAddress(Email.toLens.get.apply(email))
+                             new InternetAddress(EmailEntity.toLens.get.apply(email))
             );
-            msg.setSubject(Email.subjectLens.get.apply(email));
-            msg.setContent(Email.bodyLens.get.apply(email),
-                           Email.contentTypeLens.get.apply(email)
+            msg.setSubject(EmailEntity.subjectLens.get.apply(email));
+            msg.setContent(EmailEntity.bodyLens.get.apply(email),
+                           EmailEntity.contentTypeLens.get.apply(email)
             );
 
             if (configSet != null && !configSet.isBlank())

@@ -55,11 +55,13 @@ public class SendEmailModuleTest {
                 .setFrom("imrafael.merino@gmail.com")
                 .setFromName("Rafael Merino García")
                 .setHost("email-smtp.us-east-2.amazonaws.com")
-                .setUser("AKIA2DAVLQFRFOY2ZTVJ")
-                .setPassword("BLAYSF5371k6DzmXwFZ7FCTYZcfFqviwTRkqnsC4envT".getBytes())
+                .setUser(System.getProperty("EMAIL_API_USER",""))
+                .setPassword(System.getProperty("EMAIL_API_PASSWORD","").getBytes())
                 .setInstances(2)
-                .setAddress("email-sender-verticle")
-                .setProps(props).createModule();
+                .setSendEmailAddress("email-send")
+                .setValidateEmailAddress("email-validate")
+                .setProps(props)
+                .createModule();
 
 
         Pair.sequential(vertxRef.deployVerticle(new RegisterJsValuesCodecs()),
@@ -75,9 +77,9 @@ public class SendEmailModuleTest {
 
 
     @Test
-    public void test_SendEmail_Invalid_Message(VertxTestContext context) {
+    public void test_Validate_Message_Invalid_Message(VertxTestContext context) {
 
-        emailModule.sendEmail.apply(JsObj.empty())
+        emailModule.validateEmail.apply(JsObj.empty())
                              .onComplete(result -> context.verify(() -> {
                                  Assertions.assertTrue(Failures.anyOf(Failures.BAD_MESSAGE_CODE)
                                                                .test(result.cause()));
@@ -100,12 +102,13 @@ public class SendEmailModuleTest {
                                JsStr.of("text/plain")
         );
 
-        emailModule.sendEmail.apply(email)
-                             .onComplete(result -> context.verify(() -> {
-                                 Assertions.assertTrue(result.succeeded());
-                                 context.completeNow();
-                             }))
-                             .get();
+        emailModule.validateEmail.andThen(emailModule.sendEmail)
+                                 .apply(email)
+                                 .onComplete(result -> context.verify(() -> {
+                                     Assertions.assertTrue(result.succeeded());
+                                     context.completeNow();
+                                 }))
+                                 .get();
 
     }
 }

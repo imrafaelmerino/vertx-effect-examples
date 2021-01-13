@@ -1,6 +1,5 @@
-package vertx.effect.examples.signup.httpreq;
+package vertx.effect.examples.httpreq;
 
-import jsonvalues.JsArray;
 import jsonvalues.JsObj;
 import vertx.effect.RetryPolicy;
 import vertx.effect.exp.Cons;
@@ -66,12 +65,12 @@ public class ResilientGetBuilder<O> {
 
     public ResilientGet<O> createResilientGet() {
         return new ResilientGet<>(get,
-                                failureAttempts,
-                                not2XXAttempts,
-                                retryPolicy,
-                                reqTimeout,
-                                uri,
-                                mapResp
+                                  failureAttempts,
+                                  not2XXAttempts,
+                                  retryPolicy,
+                                  reqTimeout,
+                                  uri,
+                                  mapResp
         );
     }
 }

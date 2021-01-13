@@ -14,10 +14,15 @@ public class GeolocationModuleBuilder {
     private int reqTimeout = 3000;
     private int failureAttempts = 3;
     private int not2XXAttempts = 2;
-    private String httpClientAddress = "google-map-http-client";
+
+    public String getAddress() {
+        return address;
+    }
+
+    private String address = "google-map-http-client";
 
     private Function<Integer, RetryPolicy<Throwable>> retryPolicy =
-            attempts -> (remaining, Throwable) -> Cons.NULL;
+            attempts -> (remaining, error) -> Cons.NULL;
 
 
     public GeolocationModuleBuilder(final String apiKey,
@@ -31,8 +36,8 @@ public class GeolocationModuleBuilder {
         return this;
     }
 
-    public GeolocationModuleBuilder setHttpClientAddress(final String address) {
-        this.httpClientAddress = address;
+    public GeolocationModuleBuilder setAddress(final String address) {
+        this.address = address;
         return this;
     }
     public GeolocationModuleBuilder setFailureAttempts(final int failureAttempts) {
@@ -57,6 +62,6 @@ public class GeolocationModuleBuilder {
                                      failureAttempts,
                                      not2XXAttempts,
                                      retryPolicy,
-                                     httpClientAddress);
+                                     address);
     }
 }

@@ -4,7 +4,7 @@ import io.vertx.core.http.HttpClientOptions;
 import jsonvalues.JsArray;
 import jsonvalues.JsObj;
 import vertx.effect.RetryPolicy;
-import vertx.effect.examples.signup.httpreq.ResilientGetBuilder;
+import vertx.effect.examples.httpreq.ResilientGetBuilder;
 import vertx.effect.exp.Cons;
 import vertx.effect.httpclient.HttpClientModule;
 import vertx.effect.λ;
@@ -34,19 +34,20 @@ public class GeolocationModule extends HttpClientModule {
                 new ResilientGetBuilder<>(this.get,
                                           String.format("/maps/api/geocode/json?address=%s&key=%s",
                                                         encode(address,
-                                                               Charset.availableCharsets().get("utf-8")
+                                                               Charset.availableCharsets()
+                                                                      .get("utf-8")
                                                         ),
                                                         apiKey
                                           ),
                                           resp -> Cons.success(JsObj.parse(resp.getStr("body"))
                                                                     .getArray("results")
-                                                              )
+                                          )
                 ).setReqTimeout(reqTimeout)
                  .setNot2XXAttempts(not2XXAttempts)
                  .setFailureAttempts(failureAttempts)
                  .setRetryPolicy(retryPolicy)
                  .createResilientGet()
                  .apply(address)
-                 .recover(e->JsArray.empty());
+                 .recover(e -> JsArray.empty());
     }
 }

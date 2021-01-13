@@ -6,12 +6,12 @@ import jsonvalues.spec.JsObjSpec;
 
 import static jsonvalues.spec.JsSpecs.str;
 
-public class Email {
+public class EmailEntity {
 
-    private static final String TO_FIELD = "to";
-    private static final String SUBJECT_FIELD = "subject";
-    private static final String BODY_FIELD = "body";
-    private static final String CONTENT_TYPE_FIELD = "content_type";
+    public static final String TO_FIELD = "to";
+    public static final String SUBJECT_FIELD = "subject";
+    public static final String BODY_FIELD = "body";
+    public static final String CONTENT_TYPE_FIELD = "content_type";
 
     public static final Lens<JsObj,String> toLens =
             JsObj.lens.str(TO_FIELD);

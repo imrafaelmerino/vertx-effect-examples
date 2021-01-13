@@ -7,13 +7,17 @@ import vertx.effect.*;
 import java.util.Properties;
 import java.util.function.Function;
 
+import static java.util.Objects.requireNonNull;
 import static vertx.effect.examples.signup.email.EmailFailures.CONNECTION_TIMEOUT;
 import static vertx.effect.examples.signup.email.EmailFailures.UNKNOWN_HOST;
 
 public class SendEmailModule extends VertxModule {
 
-
     public λ<JsObj, Void> sendEmail;
+    public λ<JsObj, JsObj> validateEmail;
+
+    public final String sendEmailAddress;
+    public final String validateEmailAddress;
 
     private final String host;
     private final Properties props;
@@ -23,10 +27,8 @@ public class SendEmailModule extends VertxModule {
     private final String fromName;
     private final String configSet;
     private final int instances;
-    private final String address;
-    private final String validateAddress;
     private final int failureAttempts;
-    private Function<Integer, RetryPolicy<Throwable>> retryPolicy;
+    private final Function<Integer, RetryPolicy<Throwable>> retryPolicy;
 
     public SendEmailModule(final String host,
                            final Properties props,
@@ -36,58 +38,59 @@ public class SendEmailModule extends VertxModule {
                            final String fromName,
                            final String configSet,
                            final int instances,
-                           final String address,
+                           final String validateEmailAddress,
+                           final String sendEmailAddress,
                            final int failureAttempts,
                            final Function<Integer, RetryPolicy<Throwable>> retryPolicy) {
-        this.host = host;
-        this.props = props;
-        this.user = user;
-        this.password = password;
-        this.from = from;
-        this.fromName = fromName;
+        this.host = requireNonNull(host);
+        this.props = requireNonNull(props);
+        this.user = requireNonNull(user);
+        this.password = requireNonNull(password);
+        this.from = requireNonNull(from);
+        this.fromName = requireNonNull(fromName);
         this.configSet = configSet;
+        if (instances < 1) throw new IllegalArgumentException("instances < 1");
         this.instances = instances;
-        this.address = address;
-        this.validateAddress = String.format("validate-%s",
-                                             address);
+        this.sendEmailAddress = requireNonNull(sendEmailAddress);
+        this.validateEmailAddress = requireNonNull(validateEmailAddress);
+        if (failureAttempts < 1) throw new IllegalArgumentException("failureAttempts < 1");
         this.failureAttempts = failureAttempts;
-        this.retryPolicy = retryPolicy;
+        this.retryPolicy = requireNonNull(retryPolicy);
     }
 
     @Override
     protected void deploy() {
 
-        deploy(address,
-               new SendEmailLambda(host,
-                                   props,
-                                   user,
-                                   password,
-                                   from,
-                                   fromName,
-                                   configSet),
+        λ<JsObj, Void> send = new SendEmailLambda(host,
+                                                  props,
+                                                  user,
+                                                  password,
+                                                  from,
+                                                  fromName,
+                                                  configSet);
+
+        λ<JsObj, Void> reactiveSend = email -> send.apply(email)
+                                                   .retry(Failures.anyOf(CONNECTION_TIMEOUT,
+                                                                         UNKNOWN_HOST),
+                                                          failureAttempts,
+                                                          retryPolicy.apply(failureAttempts));
+        deploy(sendEmailAddress,
+               reactiveSend,
                new DeploymentOptions().setWorker(true)
                                       .setInstances(instances)
         );
 
-        deploy(validateAddress,
-               Validators.validateJsObj(Email.spec)
+        deploy(validateEmailAddress,
+               Validators.validateJsObj(EmailEntity.spec)
         );
+
 
     }
 
     @Override
     protected void initialize() {
-        λ<JsObj, Void> send = ask(address);
-        λ<JsObj, JsObj> validate = ask(validateAddress);
-
-        sendEmail = email -> validate.apply(email)
-                                     .flatMap(_email -> send.apply(email)
-                                                            .retry(Failures.anyOf(CONNECTION_TIMEOUT,
-                                                                                  UNKNOWN_HOST),
-                                                                   failureAttempts,
-                                                                   retryPolicy.apply(failureAttempts))
-                                     )
-        ;
+        sendEmail = ask(sendEmailAddress);
+        validateEmail = ask(validateEmailAddress);
     }
 
 }

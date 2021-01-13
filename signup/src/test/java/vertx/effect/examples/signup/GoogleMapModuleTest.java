@@ -39,7 +39,7 @@ public class GoogleMapModuleTest {
                                        .setTrustAll(true);
 
         googleMapModule =
-                new GeolocationModuleBuilder("AIzaSyDxs_R8QRp8NLGHS6ArfHIRxhEicdCY9m4",
+                new GeolocationModuleBuilder(System.getProperty("GEOCODE_API_KEY",""),
                                              options)
                         .createModule();
 
@@ -57,7 +57,7 @@ public class GoogleMapModuleTest {
     public void test(VertxTestContext context) {
 
         googleMapModule.getAddresses
-                .apply("Calle las Cruces 49, La Torre de Esteban Hambrán")
+                .apply("Plaza de Colón, 1, 28001 Madrid")
                 .get()
                 .onComplete(it -> {
                     if (it.succeeded()) {

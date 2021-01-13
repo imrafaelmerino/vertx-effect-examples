@@ -1,0 +1,17 @@
+POST http://localhost:7890/clients/signup
+Content-Type: application/json
+
+{
+  "registration_date": "2021-01-10T19:56:40.891626Z",
+  "name": "Rafael Merino García",
+  "email": {
+    "address": "rafamg13@gmail.com",
+    "validated": false
+  },
+  "image": "SSB3aXNoIEkgaGFkIGEgcGljdHVyZQ==",
+  "age": 38,
+  "gender":"M",
+  "address": "Plaza de Colón, 1, 28001 Madrid"
+}
+
+###
