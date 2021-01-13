@@ -39,8 +39,9 @@
         <VERTX-VERSION>4.0.0</VERTX-VERSION>
         <JSON-VALUES.VERSION>8.4.0</JSON-VALUES.VERSION>
         <MAVEN-JAR-PLUGIN.VERSION>3.2.0</MAVEN-JAR-PLUGIN.VERSION>
-        <VERTX-EFFECT.VERSION>1.0.0-RC3</VERTX-EFFECT.VERSION>
+        <VERTX-EFFECT.VERSION>1.0.0-RC6</VERTX-EFFECT.VERSION>
         <VERTX-MONGODB-EFFECT.VERSION>1.0.0</VERTX-MONGODB-EFFECT.VERSION>
+        <VERTX-SHELL.VERSION>4.0.0</VERTX-SHELL.VERSION>
     </properties>
 
 
@@ -73,6 +74,12 @@
     </build>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.vertx/vertx-shell -->
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-shell</artifactId>
+            <version>${VERTX-SHELL.VERSION}</version>
+        </dependency>
 
 
         <dependency>
