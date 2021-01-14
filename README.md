@@ -1,16 +1,15 @@
-- [Call to library authors](#call)
 
+- [Call to library authors](#call)
 - [Examples](#examples)
-    - [A signup verticle](#signup)
+  - [A signup verticle](#signup)
 
 ## <a name="call"><a/> Call to library authors
 
-Be the first real user of the libraries you design and develop. It will improve the library, and it will be 
+Be the first real user of the libraries you design and develop. It will improve the library, and it will be
 the best documentation.
 
-## <a name="examples"><a/> Examples 
-
-### <a name="signup"><a/> A signup verticle 
+## <a name="examples"><a/> Examples
+### <a name="signup"><a/> A signup verticle
 
 The verticle receives a Json conforming to the following [json-spec](https://github.com/imrafaelmerino/json-values):
 
@@ -55,14 +54,13 @@ JsObjSpec.strict("users", integer
 
 where the timestamp is the instant when the frontend request gets to the server.
 
-All the operations must be resilient under certain errors. The programmer should parametrize the errors, the number
-
+**All the operations must be resilient under certain errors**. The programmer should parametrize the errors, the number
 of retries, and the time between each attempt (retry policy).
 
 This example sets up a http server and a telnet server listening on the ports 7890 and 4000.
 
-The telnet server can be used to interact from the shell console with the verticles whose input
-messages are strings. For example:
+The telnet server can be used to interact from the shell console with those verticles that takes a string as input
+messages. For example:
 
 ```
 telnet localhost 4000
@@ -70,6 +68,5 @@ telnet localhost 4000
 bus-send --reply find_one_client_by_email imrafaelmerino@gmail.com
 
 ```
-
 
 
