@@ -30,6 +30,7 @@ public class GoogleMapModuleTest {
                              System.out::println
         );
 
+
         HttpClientOptions options =
                 new HttpClientOptions().setDefaultHost("maps.googleapis.com")
                                        .setDefaultPort(443)
@@ -39,7 +40,8 @@ public class GoogleMapModuleTest {
                                        .setTrustAll(true);
 
         googleMapModule =
-                new GeolocationModuleBuilder(System.getProperty("GEOCODE_API_KEY",""),
+                new GeolocationModuleBuilder(System.getProperty("GEOCODE_API_KEY",
+                                                                ""),
                                              options)
                         .createModule();
 
