@@ -85,7 +85,7 @@ one of which uses recursion.
 λ<String,JsArray> getClientEmails;
 
 // to be implemented
-λ<JsArray,JsArray> getAllClientEmails;
+λ<JsArray,JsArray> getAllClientsEmails;
 
 ```
 
