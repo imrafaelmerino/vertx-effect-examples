@@ -2,7 +2,8 @@
 - [Philosophy](#philosophy)
 - [Examples](#examples)
   - [A signup verticle](#signup)
-  - [Flatting map a list](#flatmap)
+  - [Flat map a list](#flatmap)
+  - [MongoDB](#mongodb)
 
 ## <a name="philosophy"><a/> Philosophy 
 It's a good rule of thumb to design a library for your own yourself to use rather than 
@@ -77,7 +78,7 @@ is an option to specify that the verticle reply must be printed out.
 ### <a name="flatmap"><a/> Flatting map a list
 Given a verticle that takes a client identifier and returns their emails, design a verticle
 that takes a list of clients and returns all their emails. There are two implementations,
-on of which uses recursion.
+one of which uses recursion.
 
 ```
 // It's given.
@@ -87,6 +88,13 @@ on of which uses recursion.
 λ<JsArray,JsArray> getAllClientEmails;
 
 ```
+
+
+### <a name="mongodb"><a/> MongoDB
+The library [vertx-mongodb-effect](https://github.com/imrafaelmerino/vertx-mongodb-effect) is
+the perfect example of how you can turn anything into lambdas to get benefit from
+the functional and reactive API of vertx-effect. The signup verticle example uses it.
+
 
 
 
