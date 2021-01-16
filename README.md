@@ -1,10 +1,10 @@
 
-- [Call to library authors](#call)
+- [Philosophy](#philosophy)
 - [Examples](#examples)
   - [A signup verticle](#signup)
   - [Flatting map a list](#flatmap)
 
-## <a name="call"><a/> Philosophy 
+## <a name="philosophy"><a/> Philosophy 
 It's a good rule of thumb to design a library for your own yourself to use rather than 
 for other people. Be the first real user of the libraries you design and develop and 
 solve real problems with them. It will be the best documentation.
