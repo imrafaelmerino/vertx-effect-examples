@@ -5,11 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.imrafaelmerino</groupId>
     <artifactId>vertx-effect-examples</artifactId>
-    <packaging>pom</packaging>
     <version>1.0.0</version>
-    <modules>
-        <module>signup</module>
-    </modules>
     <name>vertx-effect</name>
     <description>Examples using vertx-effect library</description>
     <url>https://github.com/imrafaelmerino/vertx-effect-examples</url>
@@ -37,9 +33,9 @@
         <MAVEN-COMPILER-PLUGIN.SOURCE>11</MAVEN-COMPILER-PLUGIN.SOURCE>
         <MAVEN-COMPILER-PLUGIN.TARGET>11</MAVEN-COMPILER-PLUGIN.TARGET>
         <VERTX-VERSION>4.0.0</VERTX-VERSION>
-        <JSON-VALUES.VERSION>8.4.0</JSON-VALUES.VERSION>
+        <JSON-VALUES.VERSION>9.0.0-RC2</JSON-VALUES.VERSION>
         <MAVEN-JAR-PLUGIN.VERSION>3.2.0</MAVEN-JAR-PLUGIN.VERSION>
-        <VERTX-EFFECT.VERSION>1.0.0-RC6</VERTX-EFFECT.VERSION>
+        <VERTX-EFFECT.VERSION>1.0.0</VERTX-EFFECT.VERSION>
         <VERTX-MONGODB-EFFECT.VERSION>1.0.0</VERTX-MONGODB-EFFECT.VERSION>
         <VERTX-SHELL.VERSION>4.0.0</VERTX-SHELL.VERSION>
     </properties>
@@ -126,5 +122,16 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
     </dependencies>
 </project>

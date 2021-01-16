@@ -19,6 +19,18 @@ public class FunctionsModule extends VertxModule {
 
     public λ<JsObj, String> jsObj2Str;
 
+    @Override
+    protected void deploy() {
+
+        deploy(GET_TIMESTAMP_ADDRESS,
+               Functions.getTimestamp);
+
+        deploy(STR_TO_JSOBJ_ADDRESS,
+               Functions.str2JsObj);
+
+        deploy(JSON_TO_STR_ADDRESS,
+               Functions.jsObj2Str);
+    }
 
     @Override
     protected void initialize() {
@@ -31,13 +43,5 @@ public class FunctionsModule extends VertxModule {
 
     }
 
-    @Override
-    protected void deploy() {
 
-        deploy(GET_TIMESTAMP_ADDRESS, Functions.getTimestamp);
-
-        deploy(STR_TO_JSOBJ_ADDRESS, Functions.str2JsObj);
-
-        deploy(JSON_TO_STR_ADDRESS, Functions.jsObj2Str);
-    }
 }

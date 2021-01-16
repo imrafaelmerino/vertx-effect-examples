@@ -2,15 +2,15 @@
 - [Call to library authors](#call)
 - [Examples](#examples)
   - [A signup verticle](#signup)
+  - [Flatting map a list](#flatmap)
 
-## <a name="call"><a/> Call to library authors
-
-Be the first real user of the libraries you design and develop. It will improve the library, and it will be
-the best documentation.
+## <a name="call"><a/> Philosophy 
+It's a good rule of thumb to design a library for your own yourself to use rather than 
+for other people. Be the first real user of the libraries you design and develop and 
+solve real problems with them. It will be the best documentation.
 
 ## <a name="examples"><a/> Examples
 ### <a name="signup"><a/> A signup verticle
-
 The verticle receives a Json conforming to the following [json-spec](https://github.com/imrafaelmerino/json-values):
 
 ```
@@ -40,7 +40,7 @@ kind "you're the user number 3000!". If an error happens, -1 is returned, and th
 
 **The signup service must execute all the operations in parallel**: the request to  Google and the MongoDB calls (persist and count)
 
-The service response conforms to the following json-spec:
+The verticle response conforms to the following json-spec:
 
 ```
 
@@ -52,21 +52,41 @@ JsObjSpec.strict("users", integer
                 
 ```                
 
-where the timestamp is the instant when the frontend request gets to the server.
+where the timestamp is the instant when the frontend request gets to the server. Vertx doesn't
+support Instant to be sent across the event bus. That's why a MessageCodec has been implemented. 
+Since Instant is immutable, it doesn't need to be copied before sending it to the event bus.
 
 **All the operations must be resilient under certain errors**. The programmer should parametrize the errors, the number
 of retries, and the time between each attempt (retry policy).
 
-This example sets up a http server and a telnet server listening on the ports 7890 and 4000.
+This example sets up a http and a telnet server.
 
-The telnet server can be used to interact from the shell console with those verticles that takes a string as input
+The telnet server can be used to interact from the shell console with those verticles that takes a string as the input
 messages. For example:
 
 ```
-telnet localhost 4000
+telnet localhost $PORT 
 
 bus-send --reply find_one_client_by_email imrafaelmerino@gmail.com
 
 ```
+
+where _find_one_client_by_email_ is the address where the verticle is listening on and _--reply_
+is an option to specify that the verticle reply must be printed out.
+
+### <a name="flatmap"><a/> Flatting map a list
+Given a verticle that takes a client identifier and returns their emails, design a verticle
+that takes a list of clients and returns all their emails. There are two implementations,
+on of which uses recursion.
+
+```
+// It's given.
+λ<String,JsArray> getClientEmails;
+
+// to be implemented
+λ<JsArray,JsArray> getAllClientEmails;
+
+```
+
 
 
