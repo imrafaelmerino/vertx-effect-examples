@@ -1,0 +1,23 @@
+\frametitle{Val and $\lambda$ }
+\begin{lstlisting}[language=Java,numbers=none,mathescape=true]
+import java.util.function.Supplier
+import java.util.function.Function
+import io.vertx.core.Future
+
+public interface Val<O> extends Supplier<Future<O>> {...}
+
+public interface $\lambda$<I,O> extends Function<I, Val<O>> {...}
+
+\end{lstlisting}
+
+\clearpage
+
+\begin{itemize}
+ \item<1->  Val is \textbf{lazy}. It \textbf{describes} an asyncronous effect
+ \item<2-> The types \textbf{I} and \textbf{O} represent messages sent to the Event Bus
+ \item<3-> If they are not supported by Vertx
+       \begin{itemize}
+        \item<4-> Implement and register a \textbf{MessageCodec} for them
+      \end{itemize}
+ \end{itemize}
+

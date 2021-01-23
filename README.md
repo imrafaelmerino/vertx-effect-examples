@@ -8,7 +8,7 @@
 ## <a name="philosophy"><a/> Philosophy 
 It's a good rule of thumb to design a library for your own yourself to use rather than 
 for other people. Be the first real user of the libraries you design and develop and 
-solve real problems with them. It will be the best documentation.
+solve real problems before shipping them. It will be the best documentation.
 
 ## <a name="examples"><a/> Examples
 ### <a name="signup"><a/> A signup verticle
