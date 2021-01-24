@@ -1,5 +1,5 @@
 \beamer@sectionintoc {1}{Goals}{3}{0}{1}
 \beamer@sectionintoc {2}{History}{20}{0}{2}
 \beamer@sectionintoc {3}{Vertx}{32}{0}{3}
-\beamer@sectionintoc {4}{vertx-effect: where Vertx meet FP }{73}{0}{4}
-\beamer@sectionintoc {5}{hands-on}{78}{0}{5}
+\beamer@sectionintoc {4}{vertx-effect: where Vertx meet FP }{78}{0}{4}
+\beamer@sectionintoc {5}{hands-on}{83}{0}{5}

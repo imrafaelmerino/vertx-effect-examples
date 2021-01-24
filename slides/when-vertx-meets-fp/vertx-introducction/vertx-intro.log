@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.4)  23 JAN 2021 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.4)  24 JAN 2021 16:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -913,7 +913,7 @@ x-intro.toc) [2
 ] [14
 
 ]
-<images/flow-1.png, id=676, 301.125pt x 331.2375pt>
+<images/flow-1.png, id=696, 301.125pt x 331.2375pt>
 File: images/flow-1.png Graphic file (type png)
 <use images/flow-1.png>
 Package pdftex.def Info: images/flow-1.png  used on input line 100.
@@ -936,7 +936,7 @@ Package pdftex.def Info: images/flow-1.png  used on input line 100.
 [17
 
 ]
-<images/flow-2.png, id=774, 478.78876pt x 340.27126pt>
+<images/flow-2.png, id=793, 478.78876pt x 340.27126pt>
 File: images/flow-2.png Graphic file (type png)
 <use images/flow-2.png>
 Package pdftex.def Info: images/flow-2.png  used on input line 112.
@@ -953,7 +953,7 @@ Package pdftex.def Info: images/flow-2.png  used on input line 112.
 ] [20
 
 ]
-<images/actor_model_paper.png, id=869, 511.9125pt x 361.35pt>
+<images/actor_model_paper.png, id=887, 511.9125pt x 361.35pt>
 File: images/actor_model_paper.png Graphic file (type png)
 <use images/actor_model_paper.png>
 Package pdftex.def Info: images/actor_model_paper.png  used on input line 120.
@@ -979,7 +979,7 @@ Package pdftex.def Info: images/actor_model_paper.png  used on input line 120.
 ] [30
 
 ]
-<images/joe_and_alan.jpg, id=1216, 1204.5pt x 803.0pt>
+<images/joe_and_alan.jpg, id=1234, 1204.5pt x 803.0pt>
 File: images/joe_and_alan.jpg Graphic file (type jpg)
 <use images/joe_and_alan.jpg>
 Package pdftex.def Info: images/joe_and_alan.jpg  used on input line 150.
@@ -1020,175 +1020,177 @@ Package pdftex.def Info: images/joe_and_alan.jpg  used on input line 150.
 ]
 [47
 
+] [48
+
+] [49
+
 ]
-<images/vertx-model-1.png, id=1837, 381.425pt x 376.40625pt>
+<images/vertx-model-1.png, id=1972, 381.425pt x 376.40625pt>
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 204.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 206.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
- [48
+ [50
 
  <./images/vertx-model-1.png>]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 204.
-(pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
- [49
-
-]
-File: images/vertx-model-1.png Graphic file (type png)
-<use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 204.
-(pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
- [50
-
-]
-File: images/vertx-model-1.png Graphic file (type png)
-<use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 204.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 206.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
  [51
 
 ]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 204.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 206.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
  [52
 
 ]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 204.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 206.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
  [53
 
 ]
-<images/vertx-model-2.png, id=2070, 341.275pt x 361.35pt>
+File: images/vertx-model-1.png Graphic file (type png)
+<use images/vertx-model-1.png>
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 206.
+(pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
+ [54
+
+]
+File: images/vertx-model-1.png Graphic file (type png)
+<use images/vertx-model-1.png>
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 206.
+(pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
+ [55
+
+]
+<images/vertx-model-2.png, id=2205, 341.275pt x 361.35pt>
 File: images/vertx-model-2.png Graphic file (type png)
 <use images/vertx-model-2.png>
-Package pdftex.def Info: images/vertx-model-2.png  used on input line 215.
+Package pdftex.def Info: images/vertx-model-2.png  used on input line 217.
 (pdftex.def)             Requested size: 102.38329pt x 108.40584pt.
- [54
+
+[56
 
  <./images/vertx-model-2.png>]
 File: images/vertx-model-2.png Graphic file (type png)
 <use images/vertx-model-2.png>
-Package pdftex.def Info: images/vertx-model-2.png  used on input line 215.
+Package pdftex.def Info: images/vertx-model-2.png  used on input line 217.
 (pdftex.def)             Requested size: 102.38329pt x 108.40584pt.
- [55
+ [57
 
 ]
-<images/vertx-model-3.png, id=2138, 461.725pt x 331.2375pt>
+<images/vertx-model-3.png, id=2271, 461.725pt x 331.2375pt>
 File: images/vertx-model-3.png Graphic file (type png)
 <use images/vertx-model-3.png>
-Package pdftex.def Info: images/vertx-model-3.png  used on input line 227.
+Package pdftex.def Info: images/vertx-model-3.png  used on input line 229.
 (pdftex.def)             Requested size: 138.51857pt x 99.37201pt.
- [56
+ [58
 
  <./images/vertx-model-3.png>]
 File: images/vertx-model-3.png Graphic file (type png)
 <use images/vertx-model-3.png>
-Package pdftex.def Info: images/vertx-model-3.png  used on input line 227.
+Package pdftex.def Info: images/vertx-model-3.png  used on input line 229.
 (pdftex.def)             Requested size: 138.51857pt x 99.37201pt.
- [57
+
+[59
+
+] [60
+
+] [61
+
+] [62
 
 ]
-<images/vertx-json-codec.png, id=2206, 435.6275pt x 80.3pt>
+<images/vertx-json-codec.png, id=2438, 435.6275pt x 80.3pt>
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 249.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
-<images/jsvalues-codec.png, id=2209, 342.27875pt x 80.3pt>
+<images/jsvalues-codec.png, id=2441, 342.27875pt x 80.3pt>
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 249.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
- [58
+ [63
 
  <./images/vertx-json-codec.png> <./images/jsvalues-codec.png>]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 249.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 249.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
- [59
+ [64
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 249.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 249.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
- [60
+ [65
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 249.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 249.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
- [61
+ [66
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 249.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 249.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
- [62
+ [67
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 249.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 249.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 260.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
- [63
+ [68
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 267.
+LaTeX Font Info:    Try loading font information for U+msa on input line 278.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 267.
+LaTeX Font Info:    Try loading font information for U+msb on input line 278.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 267.
+line 278.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-) [64
-
-] [65
-
-] [66
-
-] [67
-
-] [68
-
-] [69
+) [69
 
 ] [70
 
@@ -1197,6 +1199,16 @@ thkerncmss.
 ] [72
 
 ] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
 
 ]
 \openout4 = `vertx-intro.vrb'.
@@ -1209,23 +1221,23 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 2.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)) [74
+)) [79
 
 
 ]
-(./vertx-intro.vrb) [75
+(./vertx-intro.vrb) [80
 
 
-] (./vertx-intro.vrb) [76
+] (./vertx-intro.vrb) [81
 
 
-] (./vertx-intro.vrb) [77
+] (./vertx-intro.vrb) [82
 
 
 ]
-[78
+[83
 
-] [79
+] [84
 
  </usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1237,29 +1249,19 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \tf@snm=\write8
 \openout8 = `vertx-intro.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 334.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 334.
  (./vertx-intro.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 323.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
-
-
-Package rerunfilecheck Warning: File `vertx-intro.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `vertx-intro.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  F2AABE4D134C7DE75EB465BB81EA9632;234.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 334.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 334.
+Package rerunfilecheck Info: File `vertx-intro.out' has not changed.
+(rerunfilecheck)             Checksum: F2AABE4D134C7DE75EB465BB81EA9632;234.
  ) 
 Here is how much of TeX's memory you used:
- 19586 strings out of 492616
- 363775 string characters out of 6129482
- 667309 words of memory out of 5000000
- 22875 multiletter control sequences out of 15000+600000
+ 19604 strings out of 492616
+ 363948 string characters out of 6129482
+ 667362 words of memory out of 5000000
+ 22883 multiletter control sequences out of 15000+600000
  28981 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,65p,778b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1280,10 +1282,10 @@ e/2019/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on vertx-intro.pdf (79 pages, 797673 bytes).
+Output written on vertx-intro.pdf (84 pages, 819698 bytes).
 PDF statistics:
- 3168 PDF objects out of 3580 (max. 8388607)
- 2562 compressed objects within 26 object streams
- 167 named destinations out of 1000 (max. 500000)
- 2824 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3400 PDF objects out of 3580 (max. 8388607)
+ 2746 compressed objects within 28 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 3110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

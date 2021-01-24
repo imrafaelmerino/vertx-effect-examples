@@ -165,13 +165,15 @@
 \begin{frame}
 \frametitle{Verticles}
 \begin{itemize}
- \item<1-> \textbf{Everything} is a Verticle
- \item<2-> Verticles are strongly \textbf{isolated} (share no resources)
- \item<3-> Verticles creation and destruction is a lightweight operation
- \item<4-> Verticles have \textbf{unique} addresses
- \item<5-> If you know the address  of a verticle you can send it a message
- \item<6-> Message passing is \textbf{the only way} for verticles to interact
- \item<7-> \textbf{The more verticles the better}
+ \item<1-> \textbf{Everything} is a Verticle (minimum execution unit)
+ \item<2-> computation | storage | communication
+ \item<3-> Can create and kill other verticles
+ \item<4-> Verticles are strongly \textbf{isolated} (share no resources)
+ \item<5-> Verticles creation and destruction is a lightweight operation
+ \item<6-> Verticles have \textbf{unique} addresses
+ \item<7-> If you know the address  of a verticle you can send it a message
+ \item<8-> Message passing is \textbf{the only way} for verticles to interact
+ \item<9-> \textbf{The more verticles the better}
 \end{itemize}
 \end{frame}
 
@@ -198,7 +200,7 @@
         \item<4-> deploy verticles listening on addresses
         \item<5-> \textbf{send and publish} messages to addresses: point-to-point and pub/sub 
 \end{itemize}        
-\item<6->  \textbf{Verticles process ONE message at a time}
+\item<6->  \textbf{Verticles process ONE message at a time}. Syncronization is implemented this way
 \end{itemize}
 \end{figure}
 \end{frame}
@@ -224,6 +226,15 @@ Imagine that a verticle \textbf{sends a message} to other verticle and has to\te
 \begin{figure}
 \includegraphics[scale=0.3]{images/vertx-model-3.png}
 \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Verticles life cycle}
+\begin{itemize}
+\item<1-> Verticles that are created during app boostrap and never dye
+\item<2-> Verticles that are associated to the life cycle of an entity (user login and logout)
+\item<3-> Verticles that  are created to do computation and die after that. Why do we need an address then?
+\end{itemize}
 \end{frame}
 
 \begin{frame}
