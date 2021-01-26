@@ -17,11 +17,6 @@ import vertx.effect.VertxRef;
 import vertx.effect.examples.FunctionsModule;
 import vertx.effect.examples.codecs.RegisterInstantCodec;
 import vertx.effect.examples.signup.email.SendEmailModule;
-import vertx.effect.examples.signup.email.SendEmailModuleBuilder;
-import vertx.effect.examples.signup.geocode.GeolocationModule;
-import vertx.effect.examples.signup.geocode.GeolocationModuleBuilder;
-import vertx.effect.examples.signup.mongodb.ClientDAOModule;
-import vertx.effect.examples.signup.mongodb.ClientDAOModuleBuilder;
 import vertx.effect.exp.ListExp;
 import vertx.effect.httpserver.HttpServerBuilder;
 import vertx.mongodb.effect.MongoVertxClient;
@@ -59,18 +54,18 @@ public class Main {
                                   System.out::println);
 
         mongoVertxClient = new MongoVertxClient(MONGODB_CONNECTION_STR);
-        clientDAOModule = getClientDAOModuleBuilder(mongoVertxClient).createModule();
+        clientDAOModule = getClientDAOModule(mongoVertxClient);
 
-        emailModule = getSendEmailModuleBuilder().createModule();
-        geolocationModule = getGeolocationModuleBuilder().createModule();
+        emailModule = getSendEmailModule();
+        geolocationModule = getGeolocationModule();
         functionsModule = new FunctionsModule();
 
-        signUpModule = new SignUpModuleBuilder()
-                .setEmailModule(emailModule)
-                .setFunctionsModule(functionsModule)
-                .setGeolocationModule(geolocationModule)
-                .setClientDAOModule(clientDAOModule)
-                .createModule();
+        signUpModule = SignUpModule.builder()
+                                   .emailModule(emailModule)
+                                   .functionsModule(functionsModule)
+                                   .geolocationModule(geolocationModule)
+                                   .clientModule(clientDAOModule)
+                                   .build();
 
         deploy();
     }
@@ -94,30 +89,35 @@ public class Main {
                .get();
     }
 
-    private static ClientDAOModuleBuilder getClientDAOModuleBuilder(final MongoVertxClient mongoVertxClient) {
+    private static ClientDAOModule getClientDAOModule(final MongoVertxClient mongoVertxClient) {
         Supplier<MongoCollection<JsObj>> collectionSupplier =
                 mongoVertxClient.getCollection(MONGODB_DATABASE,
                                                MONGODB_CLIENT_COLLECTION);
 
-        return new ClientDAOModuleBuilder(collectionSupplier)
-                .setInsertFailureAttempts(MONGODB_INSERT_FAILURE_ATTEMPTS)
-                .setMaxQueryTime(MONGODB_MAX_QUERY_TIME)
-                .setQueriesFailureAttempts(MONGODB_QUERY_FAILURE_ATTEMPTS)
-                .setInsertRetryPolicy(retryPolicy)
-                .setQueryRetryPolicy(retryPolicy);
+        return ClientDAOModule.builder()
+                              .insertFailureAttempts(MONGODB_INSERT_FAILURE_ATTEMPTS)
+                              .maxQueryTime(MONGODB_MAX_QUERY_TIME)
+                              .queriesFailureAttempts(MONGODB_QUERY_FAILURE_ATTEMPTS)
+                              .insertRetryPolicy(retryPolicy)
+                              .queryRetryPolicy(retryPolicy)
+                              .collectionSupplier(collectionSupplier)
+                              .build();
     }
 
-    private static GeolocationModuleBuilder getGeolocationModuleBuilder() {
-        return new GeolocationModuleBuilder(GEOCODE_API_KEY,
-                                            new HttpClientOptions().setTrustAll(true)
-                                                                   .setSsl(true)
-                                                                   .setDefaultHost(GEOCODE_API_HOST)
-                                                                   .setDefaultPort(443)
-                                                                   .setConnectTimeout(GEOCODE_API_CONNECT_TIMEOUT)
-        ).setFailureAttempts(GEOCODE_API_FAILURE_ATTEMPTS)
-         .setNot2XXAttempts(GEOCODE_API_NOT_2XX_ATTEMPTS)
-         .setReqTimeout(GEOCODE_API_REQ_TIMEOUT)
-         .setRetryPolicy(retryPolicy);
+    private static GeolocationModule getGeolocationModule() {
+        return GeolocationModule.builder()
+                                .apiKey(GEOCODE_API_KEY)
+                                .options(new HttpClientOptions().setTrustAll(true)
+                                                                .setSsl(true)
+                                                                .setDefaultHost(GEOCODE_API_HOST)
+                                                                .setDefaultPort(443)
+                                                                .setConnectTimeout(GEOCODE_API_CONNECT_TIMEOUT)
+                                )
+                                .failureAttempts(GEOCODE_API_FAILURE_ATTEMPTS)
+                                .not2XXAttempts(GEOCODE_API_NOT_2XX_ATTEMPTS)
+                                .reqTimeout(GEOCODE_API_REQ_TIMEOUT)
+                                .retryPolicy(retryPolicy)
+                                .build();
     }
 
     private static Handler<HttpServerRequest> reqHandler() {
@@ -182,7 +182,7 @@ public class Main {
         };
     }
 
-    private static SendEmailModuleBuilder getSendEmailModuleBuilder() {
+    private static SendEmailModule getSendEmailModule() {
         Properties props = new Properties();
         props.put("mail.transport.protocol",
                   "smtp"
@@ -202,13 +202,13 @@ public class Main {
         props.put("mail.smtp.timeout",
                   EMAIL_API_TIMEOUT
         );
-        return new SendEmailModuleBuilder()
-                .setFrom(EMAIL_FROM)
-                .setFromName(EMAIL_FROM_NAME)
-                .setHost(EMAIL_API_HOST)
-                .setUser(EMAIL_API_USER)
-                .setPassword(EMAIL_API_PASSWORD.getBytes())
-                .setInstances(EMAIL_VERTICLE_INSTANCES)
-                .setProps(props);
+        return SendEmailModule.builder()
+                .from(EMAIL_FROM)
+                .fromName(EMAIL_FROM_NAME)
+                .host(EMAIL_API_HOST)
+                .user(EMAIL_API_USER)
+                .password(EMAIL_API_PASSWORD.getBytes())
+                .instances(EMAIL_VERTICLE_INSTANCES)
+                .props(props).build();
     }
 }

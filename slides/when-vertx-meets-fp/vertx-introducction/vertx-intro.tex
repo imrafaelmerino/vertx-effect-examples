@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{graphicx}
 
 %New colors defined below
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -278,15 +279,24 @@ Imagine that a verticle \textbf{sends a message} to other verticle and has to\te
 \end{frame}
 
 
- 
 \section{vertx-effect: where Vertx meet FP }
+\begin{frame}
+\frametitle{Vertx future}
+ \begin{itemize}
+          \item<1->Vertx 4 use futures to represent asynchronous results, but
+          \item<2-> Vertx future API \textbf{is not rich enough} to develop complex verticles:
+\item<3->\textbf{Only three methods to coordinate}: join, all and any
+\item<4-> Since \textbf{it's not lazy}, key reactive operations like \textit{retry}, \textit{recoverWith} and \textit{fallbackTo} are missing                       
 
-\begin{frame}[fragile]
+ \end{itemize}   
+\end{frame}
+
+\begin{frame}[fragile] 
 \frametitle{Val and $\lambda$ }
 \begin{lstlisting}[language=Java,numbers=none,mathescape=true]
-import java.util.function.Supplier
-import java.util.function.Function
-import io.vertx.core.Future
+import java.util.function.Supplier;
+import java.util.function.Function;
+import io.vertx.core.Future;
 
 public interface Val<O> extends Supplier<Future<O>> {...}
 
@@ -308,8 +318,21 @@ public interface $\lambda$<I,O> extends Function<I, Val<O>> {...}
 \end{frame}
 
 
-\section{hands-on}
+\section{Practice makes perfect}
 
+\begin{frame}
+\frametitle{Hands-on}
+\begin{itemize}
+\item<1->  Playing around with values
+\item<2->  Expressions
+\item<3->  Lambdas
+\item<4->  Deploying verticles and modules
+\item<5->  Reactive http client
+\item<6->  Wrapping existing libraries with lambdas: vertx-mongodb-effect
+\item<7->  Implementing complex flows
+\end{itemize}
+
+\end{frame}
 
 %Bibliographic references
 \begin{thebibliography}{9}

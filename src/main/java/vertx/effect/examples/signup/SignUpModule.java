@@ -1,15 +1,13 @@
 package vertx.effect.examples.signup;
 
 import jsonvalues.JsObj;
+import lombok.Builder;
 import vertx.effect.Validators;
 import vertx.effect.VertxModule;
 import vertx.effect.examples.FunctionsModule;
 import vertx.effect.examples.signup.email.SendEmailModule;
-import vertx.effect.examples.signup.geocode.GeolocationModule;
-import vertx.effect.examples.signup.mongodb.ClientDAOModule;
 import vertx.effect.λ;
 
-import static java.util.Objects.requireNonNull;
 import static vertx.effect.examples.signup.ClientEntity.CLIENT_SPEC;
 
 
@@ -22,29 +20,17 @@ import static vertx.effect.examples.signup.ClientEntity.CLIENT_SPEC;
  - sends an email to the user
  -
  */
+@Builder
 public class SignUpModule extends VertxModule {
 
     private final SendEmailModule emailModule;
     private final GeolocationModule geolocationModule;
     private final ClientDAOModule clientModule;
     private final FunctionsModule functionsModule;
-    private final String validateAddress;
-    private final String signupAddress;
-
-
-    SignUpModule(final SendEmailModule emailModule,
-                 final GeolocationModule geolocationModule,
-                 final ClientDAOModule clientModule,
-                 final FunctionsModule functionsModule,
-                 final String validateAddress,
-                 final String signupAddress) {
-        this.emailModule = requireNonNull(emailModule);
-        this.geolocationModule = requireNonNull(geolocationModule);
-        this.clientModule = requireNonNull(clientModule);
-        this.validateAddress = requireNonNull(validateAddress);
-        this.signupAddress = requireNonNull(signupAddress);
-        this.functionsModule = requireNonNull(functionsModule);
-    }
+    @Builder.Default
+    private String validateAddress = "validate-signup-message";
+    @Builder.Default
+    private String signupAddress = "signup";
 
     public λ<JsObj, JsObj> validate;
     public λ<JsObj, JsObj> signup;
@@ -56,13 +42,14 @@ public class SignUpModule extends VertxModule {
                Validators.validateJsObj(CLIENT_SPEC));
 
         deploy(signupAddress,
-               new SignUpLambdaBuilder().setCount(clientModule.countAll)
-                                        .setFindByEmail(clientModule.findByEmail)
-                                        .setGetAddresses(geolocationModule.getAddresses)
-                                        .setGetTimestamp(functionsModule.getTimestamp)
-                                        .setInsert(clientModule.insert)
-                                        .setSendEmail(emailModule.sendEmail)
-                                        .createSignUpLambda());
+               SignUpLambda.builder()
+                           .count(clientModule.countAll)
+                           .findByEmail(clientModule.findByEmail)
+                           .getAddresses(geolocationModule.getAddresses)
+                           .getTimestamp(functionsModule.getTimestamp)
+                           .insert(clientModule.insert)
+                           .sendEmail(emailModule.sendEmail)
+                           .build());
     }
 
     @Override

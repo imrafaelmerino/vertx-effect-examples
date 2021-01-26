@@ -1,7 +1,9 @@
-package vertx.effect.examples.httpreq;
+package vertx.effect.examples.signup;
 
 import jsonvalues.JsObj;
+import lombok.Builder;
 import vertx.effect.*;
+import vertx.effect.exp.Cons;
 import vertx.effect.httpclient.GetReq;
 
 import java.util.function.Function;
@@ -10,31 +12,21 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static vertx.effect.Failures.*;
 import static vertx.effect.httpclient.HttpResp.STATUS_CODE_LENS;
 
-public class ResilientGet<O> implements λ<String, O> {
+@Builder
+class ResilientGet<O> implements λ<String, O> {
 
-    private final λc<GetReq, JsObj> get;
-    private final int failureAttempts;
-    private final int not2XXAttempts;
-    private final Function<Integer, RetryPolicy<Throwable>> retryPolicy;
-    private final int reqTimeout;
-    private final String uri;
-    private final λ<JsObj,O> mapResp;
+    private λc<GetReq, JsObj> get;
+    @Builder.Default
+    private int failureAttempts = 3;
+    @Builder.Default
+    private int not2XXAttempts = 2;
+    @Builder.Default
+    private Function<Integer, RetryPolicy<Throwable>> retryPolicy = attempts -> (error, remaining) -> Cons.NULL;
+    @Builder.Default
+    private int reqTimeout = 3000;
+    private String uri;
+    private λ<JsObj, O> mapResp;
 
-    public ResilientGet(final λc<GetReq, JsObj> get,
-                        final int failureAttempts,
-                        final int not2XXAttempts,
-                        final Function<Integer, RetryPolicy<Throwable>> retryPolicy,
-                        final int reqTimeout,
-                        final String uri,
-                        final λ<JsObj,O> mapResp) {
-        this.get = get;
-        this.failureAttempts = failureAttempts;
-        this.not2XXAttempts = not2XXAttempts;
-        this.retryPolicy = retryPolicy;
-        this.reqTimeout = reqTimeout;
-        this.uri = uri;
-        this.mapResp = mapResp;
-    }
 
     @Override
     public Val<O> apply(final String address) {
@@ -42,22 +34,22 @@ public class ResilientGet<O> implements λ<String, O> {
         return this.get.apply(new GetReq().uri(uri)
                                           .timeout(reqTimeout,
                                                    MILLISECONDS
-                                                  )
-                             )
+                                          )
+        )
                        .retry(Failures.anyOf(HTTP_CONNECT_TIMEOUT_CODE,
                                              HTTP_REQUEST_TIMEOUT_CODE,
                                              HTTP_UNKNOWN_HOST_CODE,
                                              HTTP_CONNECTION_WAS_CLOSED_CODE
-                                            ),
+                              ),
                               failureAttempts,
                               retryPolicy.apply(failureAttempts)
-                             )
+                       )
                        .retryWhile(resp -> {
                                        Integer statusCode = STATUS_CODE_LENS.get.apply(resp);
                                        return statusCode >= 300 || statusCode < 200;
                                    },
                                    not2XXAttempts
-                                  )
+                       )
                        .flatMap(mapResp);
     }
 }

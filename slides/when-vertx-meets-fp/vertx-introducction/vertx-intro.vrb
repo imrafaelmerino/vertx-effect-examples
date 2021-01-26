@@ -1,8 +1,8 @@
 \frametitle{Val and $\lambda$ }
 \begin{lstlisting}[language=Java,numbers=none,mathescape=true]
-import java.util.function.Supplier
-import java.util.function.Function
-import io.vertx.core.Future
+import java.util.function.Supplier;
+import java.util.function.Function;
+import io.vertx.core.Future;
 
 public interface Val<O> extends Supplier<Future<O>> {...}
 

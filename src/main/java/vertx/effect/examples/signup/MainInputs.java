@@ -15,7 +15,7 @@ public class MainInputs {
     static final int GEOCODE_API_FAILURE_ATTEMPTS = 3;
     static final int GEOCODE_API_NOT_2XX_ATTEMPTS = 2;
 
-    static final String EMAIL_FROM = "imrafael.merino@gmail.com";
+    static final String EMAIL_FROM = "rafamg13@gmail.com";
     static final String EMAIL_API_HOST = "email-smtp.us-east-2.amazonaws.com";
     static final String EMAIL_API_USER = System.getProperty("EMAIL_API_USER","");
     static final String EMAIL_API_PASSWORD = System.getProperty("EMAIL_API_PASSWORD","");

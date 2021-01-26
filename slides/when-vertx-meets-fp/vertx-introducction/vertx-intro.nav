@@ -56,13 +56,17 @@
 \headcommand {\beamer@framepages {78}{78}}
 \headcommand {\slideentry {4}{0}{2}{79/82}{}{0}}
 \headcommand {\beamer@framepages {79}{82}}
-\headcommand {\beamer@sectionpages {78}{82}}
-\headcommand {\beamer@subsectionpages {78}{82}}
-\headcommand {\sectionentry {5}{hands-on}{83}{hands-on}{0}}
-\headcommand {\slideentry {5}{0}{1}{83/83}{}{0}}
-\headcommand {\beamer@framepages {83}{83}}
-\headcommand {\beamer@partpages {1}{84}}
-\headcommand {\beamer@subsectionpages {83}{84}}
-\headcommand {\beamer@sectionpages {83}{84}}
-\headcommand {\beamer@documentpages {84}}
-\headcommand {\gdef \inserttotalframenumber {24}}
+\headcommand {\slideentry {4}{0}{3}{83/86}{}{0}}
+\headcommand {\beamer@framepages {83}{86}}
+\headcommand {\beamer@sectionpages {78}{86}}
+\headcommand {\beamer@subsectionpages {78}{86}}
+\headcommand {\sectionentry {5}{Practice makes perfect}{87}{Practice makes perfect}{0}}
+\headcommand {\slideentry {5}{0}{1}{87/87}{}{0}}
+\headcommand {\beamer@framepages {87}{87}}
+\headcommand {\slideentry {5}{0}{2}{88/94}{}{0}}
+\headcommand {\beamer@framepages {88}{94}}
+\headcommand {\beamer@partpages {1}{95}}
+\headcommand {\beamer@subsectionpages {87}{95}}
+\headcommand {\beamer@sectionpages {87}{95}}
+\headcommand {\beamer@documentpages {95}}
+\headcommand {\gdef \inserttotalframenumber {26}}

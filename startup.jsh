@@ -10,8 +10,8 @@ import vertx.effect.httpclient.*;
 import vertx.effect.httpclient.oauth.*;
 import vertx.effect.httpserver.*;
 import vertx.effect.mock.*;
-import io.vertx.core;
-
+import io.vertx.core.*;
+import io.vertx.core.Vertx;
 
 
 

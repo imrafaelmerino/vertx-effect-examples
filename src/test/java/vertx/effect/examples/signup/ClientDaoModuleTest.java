@@ -1,7 +1,6 @@
 package vertx.effect.examples.signup;
 
 import com.mongodb.client.MongoCollection;
-import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
@@ -13,8 +12,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import vertx.effect.RegisterJsValuesCodecs;
 import vertx.effect.RetryPolicy;
 import vertx.effect.VertxRef;
-import vertx.effect.examples.signup.mongodb.ClientDAOModule;
-import vertx.effect.examples.signup.mongodb.ClientDAOModuleBuilder;
 import vertx.effect.exp.Triple;
 import vertx.mongodb.effect.MongoVertxClient;
 
@@ -49,9 +46,11 @@ public class ClientDaoModuleTest {
                 mongoVertxClient.getCollection("test",
                                                "Client");
 
-        daoModule = new ClientDAOModuleBuilder(collectionSupplier).setQueryRetryPolicy(retryPolicy)
-                                                                  .setQueriesFailureAttempts(25)
-                                                                  .createModule();
+        daoModule = ClientDAOModule.builder()
+                                   .collectionSupplier(collectionSupplier)
+                                   .queryRetryPolicy(retryPolicy)
+                                   .queriesFailureAttempts(2)
+                                   .build();
 
         Triple.sequential(vertxRef.deployVerticle(new RegisterJsValuesCodecs()),
                           vertxRef.deployVerticle(mongoVertxClient),
@@ -65,7 +64,7 @@ public class ClientDaoModuleTest {
     }
 
     @Test
-    @Timeout(value = 60,timeUnit = SECONDS)
+    @Timeout(value = 60, timeUnit = SECONDS)
     public void test_find_one(VertxTestContext context) {
 
         daoModule.findByEmail.apply("hola")

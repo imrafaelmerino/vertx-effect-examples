@@ -77,7 +77,7 @@ public class ClientEntity {
                         JsGens.cons(JsInstant.of(Instant.now())),
                         EMAIL_FIELD,
                         JsObjGen.of(ADDRESS_FIELD,
-                                    JsGens.cons(JsStr.of("rafamg13@gmail.com")),
+                                    JsGens.cons(JsStr.of("imrafaelmerino@gmail.com")),
                                     VALIDATED_FIELD,
                                     JsGens.bool
                         ),

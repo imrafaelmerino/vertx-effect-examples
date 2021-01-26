@@ -23,23 +23,23 @@ public class SignUpLambdaTest {
 
 
         Supplier<JsObj> gen = ClientEntity.CLIENT_GEN.apply(new Random());
-        SignUpLambdaBuilder builder =
-                new SignUpLambdaBuilder()
-                        .setFindByEmail(email -> Cons.success(Optional.of(gen.get())))
-                        .setCount(fail(RuntimeException::new))
-                        .setGetAddresses(fail(RuntimeException::new))
-                        .setSendEmail(fail(RuntimeException::new))
-                        .setGetTimestamp(fail(RuntimeException::new))
-                        .setInsert(fail(RuntimeException::new));
+        SignUpLambda lambda =
+                SignUpLambda.builder()
+                            .findByEmail(email -> Cons.success(Optional.of(gen.get())))
+                            .count(fail(RuntimeException::new))
+                            .getAddresses(fail(RuntimeException::new))
+                            .sendEmail(fail(RuntimeException::new))
+                            .getTimestamp(fail(RuntimeException::new))
+                            .insert(fail(RuntimeException::new))
+                            .build();
 
 
-        builder.createSignUpLambda()
-               .apply(gen.get())
-               .onComplete(it -> context.verify(() -> {
-                   Assertions.assertTrue(it.failed());
-                   context.completeNow();
-               }))
-               .get();
+        lambda.apply(gen.get())
+              .onComplete(it -> context.verify(() -> {
+                  Assertions.assertTrue(it.failed());
+                  context.completeNow();
+              }))
+              .get();
 
 
     }
@@ -49,26 +49,26 @@ public class SignUpLambdaTest {
 
 
         Supplier<JsObj> gen = ClientEntity.CLIENT_GEN.apply(new Random());
-        SignUpLambdaBuilder builder =
-                new SignUpLambdaBuilder()
-                        .setFindByEmail(email -> Cons.success(Optional.ofNullable(null)))
-                        .setCount(e -> Cons.success(10L))
-                        .setGetAddresses(e -> Cons.success(JsArray.empty()))
-                        .setSendEmail(fail(RuntimeException::new))
-                        .setGetTimestamp(e -> Cons.success(Instant.now()))
-                        .setInsert(e -> Cons.failure(new RuntimeException("Something bad happened!")));
+        SignUpLambda lambda =
+                SignUpLambda.builder()
+                            .findByEmail(email -> Cons.success(Optional.ofNullable(null)))
+                            .count(e -> Cons.success(10L))
+                            .getAddresses(e -> Cons.success(JsArray.empty()))
+                            .sendEmail(fail(RuntimeException::new))
+                            .getTimestamp(e -> Cons.success(Instant.now()))
+                            .insert(e -> Cons.failure(new RuntimeException("Something bad happened!")))
+                            .build();
 
 
-        builder.createSignUpLambda()
-               .apply(gen.get())
-               .onComplete(it -> context.verify(() -> {
-                   Assertions.assertTrue(it.cause() instanceof RuntimeException);
-                   Assertions.assertEquals("Something bad happened!",
-                                           it.cause()
-                                             .getMessage());
-                   context.completeNow();
-               }))
-               .get();
+        lambda.apply(gen.get())
+              .onComplete(it -> context.verify(() -> {
+                  Assertions.assertTrue(it.cause() instanceof RuntimeException);
+                  Assertions.assertEquals("Something bad happened!",
+                                          it.cause()
+                                            .getMessage());
+                  context.completeNow();
+              }))
+              .get();
 
 
     }
@@ -80,32 +80,32 @@ public class SignUpLambdaTest {
 
         Instant now = Instant.now();
         Supplier<JsObj> gen = ClientEntity.CLIENT_GEN.apply(new Random());
-        SignUpLambdaBuilder builder =
-                new SignUpLambdaBuilder()
-                        .setFindByEmail(email -> Cons.success(Optional.ofNullable(null)))
-                        .setCount(e -> Cons.success(10L))
-                        .setGetAddresses(e -> Cons.success(JsArray.empty()))
-                        .setGetTimestamp(e -> Cons.success(now))
-                        .setSendEmail(fail(RuntimeException::new))
-                        .setInsert(e -> Cons.success("id"));
+        SignUpLambda lambda =
+                SignUpLambda.builder()
+                            .findByEmail(email -> Cons.success(Optional.ofNullable(null)))
+                            .count(e -> Cons.success(10L))
+                            .getAddresses(e -> Cons.success(JsArray.empty()))
+                            .getTimestamp(e -> Cons.success(now))
+                            .sendEmail(fail(RuntimeException::new))
+                            .insert(e -> Cons.success("id"))
+                            .build();
 
 
-        builder.createSignUpLambda()
-               .apply(gen.get())
-               .onComplete(it -> context.verify(() -> {
-                   Assertions.assertEquals(JsObj.of("users",
-                                                    JsLong.of(10),
-                                                    "addresses",
-                                                    JsArray.empty(),
-                                                    "id",
-                                                    JsStr.of("id"),
-                                                    "timestamp",
-                                                    JsInstant.of(now)
-                                           ),
-                                           it.result());
-                   context.completeNow();
-               }))
-               .get();
+        lambda.apply(gen.get())
+              .onComplete(it -> context.verify(() -> {
+                  Assertions.assertEquals(JsObj.of("users",
+                                                   JsLong.of(10),
+                                                   "addresses",
+                                                   JsArray.empty(),
+                                                   "id",
+                                                   JsStr.of("id"),
+                                                   "timestamp",
+                                                   JsInstant.of(now)
+                                          ),
+                                          it.result());
+                  context.completeNow();
+              }))
+              .get();
 
 
     }

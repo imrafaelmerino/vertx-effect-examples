@@ -13,7 +13,6 @@ import vertx.effect.Failures;
 import vertx.effect.RegisterJsValuesCodecs;
 import vertx.effect.VertxRef;
 import vertx.effect.examples.signup.email.SendEmailModule;
-import vertx.effect.examples.signup.email.SendEmailModuleBuilder;
 import vertx.effect.exp.Pair;
 
 import java.util.Properties;
@@ -51,17 +50,20 @@ public class SendEmailModuleTest {
                   5000
         );
 
-        emailModule = new SendEmailModuleBuilder()
-                .setFrom("imrafael.merino@gmail.com")
-                .setFromName("Rafael Merino García")
-                .setHost("email-smtp.us-east-2.amazonaws.com")
-                .setUser(System.getProperty("EMAIL_API_USER",""))
-                .setPassword(System.getProperty("EMAIL_API_PASSWORD","").getBytes())
-                .setInstances(2)
-                .setSendEmailAddress("email-send")
-                .setValidateEmailAddress("email-validate")
-                .setProps(props)
-                .createModule();
+        emailModule = SendEmailModule.builder()
+                                     .from("rafamg13@gmail.com")
+                                     .fromName("Rafael Merino García")
+                                     .host("email-smtp.us-east-2.amazonaws.com")
+                                     .user(System.getProperty("EMAIL_API_USER",
+                                                              ""))
+                                     .password(System.getProperty("EMAIL_API_PASSWORD",
+                                                                  "")
+                                                     .getBytes())
+                                     .instances(2)
+                                     .sendEmailAddress("email-send")
+                                     .validateEmailAddress("email-validate")
+                                     .props(props)
+                                     .build();
 
 
         Pair.sequential(vertxRef.deployVerticle(new RegisterJsValuesCodecs()),
@@ -80,12 +82,12 @@ public class SendEmailModuleTest {
     public void test_Validate_Message_Invalid_Message(VertxTestContext context) {
 
         emailModule.validateEmail.apply(JsObj.empty())
-                             .onComplete(result -> context.verify(() -> {
-                                 Assertions.assertTrue(Failures.anyOf(Failures.BAD_MESSAGE_CODE)
-                                                               .test(result.cause()));
-                                 context.completeNow();
-                             }))
-                             .get();
+                                 .onComplete(result -> context.verify(() -> {
+                                     Assertions.assertTrue(Failures.anyOf(Failures.BAD_MESSAGE_CODE)
+                                                                   .test(result.cause()));
+                                     context.completeNow();
+                                 }))
+                                 .get();
 
     }
 

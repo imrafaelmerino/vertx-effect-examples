@@ -10,8 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import vertx.effect.RegisterJsValuesCodecs;
 import vertx.effect.VertxRef;
-import vertx.effect.examples.signup.geocode.GeolocationModule;
-import vertx.effect.examples.signup.geocode.GeolocationModuleBuilder;
 import vertx.effect.exp.Pair;
 
 @ExtendWith(VertxExtension.class)
@@ -40,10 +38,11 @@ public class GoogleMapModuleTest {
                                        .setTrustAll(true);
 
         googleMapModule =
-                new GeolocationModuleBuilder(System.getProperty("GEOCODE_API_KEY",
-                                                                ""),
-                                             options)
-                        .createModule();
+                GeolocationModule.builder()
+                                 .apiKey(System.getProperty("GEOCODE_API_KEY",
+                                                            ""))
+                                 .options(options)
+                                 .build();
 
         Pair.sequential(ref.deployVerticle(new RegisterJsValuesCodecs()),
                         ref.deployVerticle(googleMapModule)

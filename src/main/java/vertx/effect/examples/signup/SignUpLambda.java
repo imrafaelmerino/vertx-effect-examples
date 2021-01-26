@@ -2,7 +2,9 @@ package vertx.effect.examples.signup;
 
 import io.vertx.core.Future;
 import jsonvalues.*;
+import lombok.Builder;
 import vertx.effect.Val;
+import vertx.effect.examples.signup.email.EmailEntity;
 import vertx.effect.exp.Cons;
 import vertx.effect.exp.IfElse;
 import vertx.effect.exp.JsObjExp;
@@ -13,35 +15,30 @@ import java.time.Instant;
 import java.util.Optional;
 import java.util.function.Function;
 
-import static java.util.Objects.requireNonNull;
 import static vertx.effect.examples.signup.ClientEntity.*;
+import static vertx.effect.examples.signup.email.EmailEntity.*;
 
+@Builder
 class SignUpLambda implements λ<JsObj, JsObj> {
 
-    private final λ<String, Optional<JsObj>> findByEmail;
-    private final λ<JsObj, String> insert;
-    private final λ<String, JsArray> getAddresses;
-    private final λ<JsObj, Void> sendEmail;
-    private final λ<Void, Long> count;
-    private final λ<Void, Instant> getTimestamp;
-    private final Function<JsObj, JsObj> createEmail;
+    private λ<String, Optional<JsObj>> findByEmail;
+    private λ<JsObj, String> insert;
+    private λ<String, JsArray> getAddresses;
+    private λ<JsObj, Void> sendEmail;
+    private λ<Void, Long> count;
+    private λ<Void, Instant> getTimestamp;
+    @Builder.Default
+    private Function<JsObj, JsObj> createEmail =
+            client -> {
+                String to = EMAIL_LENS.get.apply(client);
+                String name = NAME_LENS.get.apply(client);
+                return bodyLens.set.apply("Welcome " + name + "!")
+                                   .andThen(subjectLens.set.apply("signup"))
+                                   .andThen(EmailEntity.contentTypeLens.set.apply("text/html"))
+                                   .andThen(toLens.set.apply(to))
+                                   .apply(client);
+            };
 
-    SignUpLambda(final λ<String, Optional<JsObj>> findByEmail,
-                 final λ<JsObj, String> insert,
-                 final λ<String, JsArray> getAddresses,
-                 final λ<JsObj, Void> sendEmail,
-                 final λ<Void, Long> count,
-                 final λ<Void, Instant> getTimestamp,
-                 final Function<JsObj, JsObj> createEmail) {
-
-        this.findByEmail = requireNonNull(findByEmail);
-        this.insert = requireNonNull(insert);
-        this.getAddresses = requireNonNull(getAddresses);
-        this.sendEmail = requireNonNull(sendEmail);
-        this.count = requireNonNull(count);
-        this.getTimestamp = requireNonNull(getTimestamp);
-        this.createEmail = requireNonNull(createEmail);
-    }
 
     @Override
     public Val<JsObj> apply(final JsObj client) {

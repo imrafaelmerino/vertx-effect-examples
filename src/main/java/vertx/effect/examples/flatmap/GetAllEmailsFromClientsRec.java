@@ -8,6 +8,7 @@ import vertx.effect.Val;
 import vertx.effect.exp.Cons;
 import vertx.effect.exp.JsObjExp;
 import vertx.effect.λ;
+import  io.vertx.core.Vertx;
 
 import java.util.function.Function;
 

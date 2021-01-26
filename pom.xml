@@ -38,6 +38,7 @@
         <VERTX-EFFECT.VERSION>1.0.0</VERTX-EFFECT.VERSION>
         <VERTX-MONGODB-EFFECT.VERSION>1.0.0</VERTX-MONGODB-EFFECT.VERSION>
         <VERTX-SHELL.VERSION>4.0.0</VERTX-SHELL.VERSION>
+        <LOMBOK.VERSION>1.18.16</LOMBOK.VERSION>
     </properties>
 
 
@@ -101,6 +102,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${LOMBOK.VERSION}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.6.2</version>
@@ -133,5 +141,6 @@
             <artifactId>javax.mail</artifactId>
             <version>1.6.2</version>
         </dependency>
+
     </dependencies>
 </project>
