@@ -1,10 +1,14 @@
 \documentclass{beamer}
-
+\usepackage{cite}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{bibentry}
+\usepackage{verse}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, 
 
 %New colors defined below
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -47,7 +51,7 @@
   \end{frame}
 }
 
-\title{Vertx}
+\title{Game of Verticles I: Introduction to Vert.x}
 \author{Rafael Merino García}
 \institute{@imrafaelmerino}
 \date{2021}
@@ -93,10 +97,10 @@
 \begin{frame}
 \frametitle{Goals (II)}    
     \begin{itemize}
-    \item<1->  Develop complex services in Vertx \textbf{and not die trying} (async programming is still hard nowdays)
-    \item<2->  A, B and C are http requests or database calls executed \textbf{in parallel} 
+    \item<1->  Develop complex services in Vertx \textbf{and not die trying} (async programming is still hard nowadays)
+    \item<2->  A, B and C are HTTP requests or database calls executed \textbf{in parallel} 
    \begin{figure}\includegraphics[scale=0.4]{images/flow-1.png}\end{figure}
-     \item<3->  I didn't mention, but I was thinking of \textbf{just one line of code}
+     \item<3->  I didn't mention it, but I was thinking of \textbf{just one line of code}
      \end{itemize}      
 \end{frame} 
 
@@ -104,7 +108,7 @@
 \begin{frame}
 \frametitle{Goals (III)}    
  \begin{itemize}
-    \item<1-> and if you retry some ops under certains errors (connection timeouts, network partitions etc) or want to add some action without waiting for the response, like sending an email (H)
+    \item<1-> and if you retry some ops under certain errors (connection timeouts, network partitions, etc.) or want to add some action without waiting for the response, like sending an email (H)
     \begin{figure}
 \includegraphics[scale=0.4]{images/flow-2.png}
 \end{figure}
@@ -123,7 +127,7 @@
 \begin{frame}
 \frametitle{SmallTalk (1970-1980)}
    \begin{itemize}
-    \item<1->  \textbf{Alan Kay}, one of its creator, \textbf{coined the term Object Oriented Programming }but...   
+    \item<1->  \textbf{Alan Kay}, one of its creators, \textbf{coined the term Object- Oriented Programming }but...   
     \item<2->  “I’m sorry that I long ago coined the term “objects” for this topic because it gets many people to focus on the lesser idea. \textbf{The big idea is messaging}.”
     \item<3-> "I made up the term ‘object-oriented’, and I can tell you \textbf{I didn’t have C++ in mind}.”
      \item<4-> Download Pharo and be blown away!
@@ -166,15 +170,15 @@
 \begin{frame}
 \frametitle{Verticles}
 \begin{itemize}
- \item<1-> \textbf{Everything} is a Verticle (minimum execution unit)
+ \item<1-> \textbf{Everything} is a Verticle (minimum unit of computation)
  \item<2-> computation | storage | communication
  \item<3-> Can create and kill other verticles
  \item<4-> Verticles are strongly \textbf{isolated} (share no resources)
  \item<5-> Verticles creation and destruction is a lightweight operation
  \item<6-> Verticles have \textbf{unique} addresses
- \item<7-> If you know the address  of a verticle you can send it a message
+ \item<7-> If you know the address  of a verticle, you can send it a message (location transparency)
  \item<8-> Message passing is \textbf{the only way} for verticles to interact
- \item<9-> \textbf{The more verticles the better}
+ \item<9-> \textbf{The more verticles, the better}
 \end{itemize}
 \end{frame}
 
@@ -195,13 +199,13 @@
 \includegraphics[scale=0.3]{images/vertx-model-1.png}
 \begin{itemize}
 \item<1-> The event bus  is the nervous system of Vertx
-\item<2-> Distributed event bus: verticles \textbf{from different machines} can communicate with each other sending messages. Scale-out
+\item<2-> Distributed event bus: verticles \textbf{from different machines} can communicate with each other by sending messages. Scale-out
 \item<3-> It provides an API to:
 \begin{itemize}
         \item<4-> deploy verticles listening on addresses
         \item<5-> \textbf{send and publish} messages to addresses: point-to-point and pub/sub 
 \end{itemize}        
-\item<6->  \textbf{Verticles process ONE message at a time}. Syncronization is implemented this way
+\item<6->  \textbf{Verticles process ONE message at a time}. Synchronization is implemented this way
 \end{itemize}
 \end{figure}
 \end{frame}
@@ -212,17 +216,17 @@
 \includegraphics[scale=0.3]{images/vertx-model-2.png}
 \begin{itemize}
 \item<1-> Scale-up: deploying multiple instances of a verticle listening on the same address
-\item<2-> Instance that receives the message is chosen using a non-strict round-robin algorithm 
+\item<2-> The instance that receives the message is chosen using a non-strict round-robin algorithm 
 \end{itemize}
 \end{figure}
 \end{frame}
 
 \begin{frame}
 \frametitle{Vertx model (III)}
-Imagine that a verticle \textbf{sends a message} to other verticle and has to\textbf{ process the response}
+Imagine that a verticle \textbf{sends a message} to another verticle and has to\textbf{ process the response}
 \begin{itemize}
 \item<1-> Programmatically, it's just a handler
-\item<2-> but in practice it's just another verticle listening on a random address
+\item<2-> but in practice, it's just another verticle listening on a random address
 \end{itemize}
 \begin{figure}
 \includegraphics[scale=0.3]{images/vertx-model-3.png}
@@ -232,9 +236,9 @@ Imagine that a verticle \textbf{sends a message} to other verticle and has to\te
 \begin{frame}
 \frametitle{Verticles life cycle}
 \begin{itemize}
-\item<1-> Verticles that are created during app boostrap and never dye
-\item<2-> Verticles that are associated to the life cycle of an entity (user login and logout)
-\item<3-> Verticles that  are created to do computation and die after that. Why do we need an address then?
+\item<1-> Verticles that are created during app bootstrap and never dye
+\item<2-> Verticles that are associated with the life cycle of an entity (user login and logout)
+\item<3-> Verticles that  are created to do computation and die after that
 \end{itemize}
 \end{frame}
 
@@ -244,7 +248,7 @@ Imagine that a verticle \textbf{sends a message} to other verticle and has to\te
 \item<1-> String, null, bytes, Numbers, Boolean and Json (from Jackson)
 \item<2-> All supported messages have a MessageCodec associated
 \item<3-> You can send your own messages if you create and register their codecs
-\item<4-> The vertx Json is mutable. ¿Why is this a problem?
+\item<4-> The Json from Jackson is mutable. ¿Why is this a problem?
 \begin{itemize}
 \item<5-> Verticles have to be isolated
 \newline
@@ -263,9 +267,8 @@ Imagine that a verticle \textbf{sends a message} to other verticle and has to\te
 \begin{frame}
 \frametitle{Threading model}
 \begin{itemize}
-\item<1->Two type of threads: \textbf{event loops and workers}
-\item<2-> When deploying a verticle you have to specify if it will be executed by      
- a worker or an event loop
+\item<1->Two types of threads: \textbf{event loops and workers}
+\item<2-> When deploying a verticle, you have to specify if a worker or an event loop will execute it.
 \item<3-> computationally intensive or blocking tasks $\Rightarrow$ worker
  \item<4-> never block an event loop
  \item<5-> Size of pools by default
@@ -278,6 +281,14 @@ Imagine that a verticle \textbf{sends a message} to other verticle and has to\te
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Alternatives}
+\begin{itemize}
+\item<1-> Erlang 
+\item<2-> Scala Akka 
+\item<3-> Pony (compiled programming language)
+\end{itemize}
+\end{frame}
 
 \section{vertx-effect: where Vertx meet FP }
 \begin{frame}
@@ -285,14 +296,20 @@ Imagine that a verticle \textbf{sends a message} to other verticle and has to\te
  \begin{itemize}
           \item<1->Vertx 4 use futures to represent asynchronous results, but
           \item<2-> Vertx future API \textbf{is not rich enough} to develop complex verticles:
-\item<3->\textbf{Only three methods to coordinate}: join, all and any
-\item<4-> Since \textbf{it's not lazy}, key reactive operations like \textit{retry}, \textit{recoverWith} and \textit{fallbackTo} are missing                       
+                 \item<3->\textbf{Only three methods to coordinate}: join, all and any
+                 \item<4-> Since \textbf{it's not lazy}, key reactive operations like \textit{retry}, \textit{recoverWith} and \textit{fallbackTo} are missing                       
 
  \end{itemize}   
 \end{frame}
 
+\begin{frame}
+\frametitle{Microservices era}    
+Impossible to address the following flow reasonably:
+\includegraphics[scale=0.4]{images/flow-2.png}
+\end{frame} 
+
 \begin{frame}[fragile] 
-\frametitle{Val and $\lambda$ }
+\frametitle{Val and $\lambda$  to the rescue}
 \begin{lstlisting}[language=Java,numbers=none,mathescape=true]
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -318,10 +335,11 @@ public interface $\lambda$<I,O> extends Function<I, Val<O>> {...}
 \end{frame}
 
 
-\section{Practice makes perfect}
+\section{Hands-on}
 
 \begin{frame}
-\frametitle{Hands-on}
+\frametitle{Index}
+What we will do in the next session:
 \begin{itemize}
 \item<1->  Playing around with values
 \item<2->  Expressions
@@ -331,30 +349,58 @@ public interface $\lambda$<I,O> extends Function<I, Val<O>> {...}
 \item<6->  Wrapping existing libraries with lambdas: vertx-mongodb-effect
 \item<7->  Implementing complex flows
 \end{itemize}
-
 \end{frame}
 
-%Bibliographic references
+
+\begin{frame}[t, allowframebreaks]
+\frametitle{References}
 \begin{thebibliography}{9}
-\bibitem{latexcompanion} 
-Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
-\textit{The \LaTeX\ Companion}. 
-Addison-Wesley, Reading, Massachusetts, 1993.
 
-\bibitem{einstein} 
-Albert Einstein. 
-\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) [\textit{On the electrodynamics of moving bodies}]. 
-Annalen der Physik, 322(10):891–921, 1905.
+\setbeamertemplate{bibliography item}[online]
+\bibitem{actormodelpaper} 
+Carl Hewitt: Actor Model of Computation
 
-\bibitem{knuthwebsite} 
-Knuth: Computers and Typesetting,
-\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+\url{https://arxiv.org/vc/arxiv/papers/1008/1008.1459v8.pdf}
+
+\bibitem{history-smalltalk-paper} 
+Alan C. Kay: The early history of Smalltalk.
+
+\url{http://www.metaobject.com/papers/Smallhistory.pdf}
+
+
+\bibitem{alan-kay-email-messaging} 
+Alan C. Kay: Email explaining that the big idea is "messages" and not objects.
+\url{http://lists.squeakfoundation.org/pipermail/squeak-dev/1998-October/017019.html}
+
+\bibitem{alan-kay-email-oop} 
+Dr. Alan Kay on the Meaning of “Object-Oriented Programming”.
+
+\url{http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en}
+
+\bibitem{joe-armstrong-email-about-actor-model} 
+Joe Armstrong explaining that they weren't interested in, or worried about, the actor model while creating Erlang.
+
+\url{http://erlang.org/pipermail/erlang-questions/2014-June/079891.html}
+
+\setbeamertemplate{bibliography item}[book]
+\bibitem{joe-armstrong-book} 
+Joe Armstrong. Programming Erlang: Software for a Concurrent World
+
 \end{thebibliography}
-
-
-
+\end{frame}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

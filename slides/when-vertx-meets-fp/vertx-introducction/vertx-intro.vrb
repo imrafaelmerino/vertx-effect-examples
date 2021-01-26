@@ -1,4 +1,4 @@
-\frametitle{Val and $\lambda$ }
+\frametitle{Val and $\lambda$  to the rescue}
 \begin{lstlisting}[language=Java,numbers=none,mathescape=true]
 import java.util.function.Supplier;
 import java.util.function.Function;
