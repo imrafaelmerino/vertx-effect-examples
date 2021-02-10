@@ -6,7 +6,7 @@ import jsonvalues.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import vertx.effect.exp.Cons;
+import vertx.effect.Val;
 
 import java.time.Instant;
 import java.util.Optional;
@@ -25,11 +25,11 @@ public class SignUpLambdaTest {
         Supplier<JsObj> gen = ClientEntity.CLIENT_GEN.apply(new Random());
         SignUpLambda lambda =
                 SignUpLambda.builder()
-                            .findByEmail(email -> Cons.success(Optional.of(gen.get())))
-                            .count(fail(RuntimeException::new))
+                            .findByEmail(email -> Val.succeed(Optional.of(gen.get())))
+                            .count(()-> Val.fail(new RuntimeException()))
                             .getAddresses(fail(RuntimeException::new))
                             .sendEmail(fail(RuntimeException::new))
-                            .getTimestamp(fail(RuntimeException::new))
+                            .getTimestamp(()->Val.fail(new RuntimeException()))
                             .insert(fail(RuntimeException::new))
                             .build();
 
@@ -51,12 +51,17 @@ public class SignUpLambdaTest {
         Supplier<JsObj> gen = ClientEntity.CLIENT_GEN.apply(new Random());
         SignUpLambda lambda =
                 SignUpLambda.builder()
-                            .findByEmail(email -> Cons.success(Optional.ofNullable(null)))
-                            .count(e -> Cons.success(10L))
-                            .getAddresses(e -> Cons.success(JsArray.empty()))
+                            .findByEmail(email -> Val.succeed(Optional.ofNullable(null)))
+                            .count(() -> Val.succeed(10L))
+                            .getAddresses(e -> Val.succeed(JsObj.of("status_code",
+                                                                    JsInt.of(200),
+                                                                    "body",
+                                                                    JsStr.of(""))
+                                          )
+                            )
                             .sendEmail(fail(RuntimeException::new))
-                            .getTimestamp(e -> Cons.success(Instant.now()))
-                            .insert(e -> Cons.failure(new RuntimeException("Something bad happened!")))
+                            .getTimestamp(() -> Val.succeed(Instant.now()))
+                            .insert(e -> Val.fail(new RuntimeException("Something bad happened!")))
                             .build();
 
 
@@ -82,12 +87,15 @@ public class SignUpLambdaTest {
         Supplier<JsObj> gen = ClientEntity.CLIENT_GEN.apply(new Random());
         SignUpLambda lambda =
                 SignUpLambda.builder()
-                            .findByEmail(email -> Cons.success(Optional.ofNullable(null)))
-                            .count(e -> Cons.success(10L))
-                            .getAddresses(e -> Cons.success(JsArray.empty()))
-                            .getTimestamp(e -> Cons.success(now))
+                            .findByEmail(email -> Val.succeed(Optional.ofNullable(null)))
+                            .count(() -> Val.succeed(10L))
+                            .getAddresses(e -> Val.succeed(JsObj.of("status_code",
+                                                                    JsInt.of(200),
+                                                                    "body",
+                                                                    JsStr.of(""))))
+                            .getTimestamp(() -> Val.succeed(now))
                             .sendEmail(fail(RuntimeException::new))
-                            .insert(e -> Cons.success("id"))
+                            .insert(e -> Val.succeed("id"))
                             .build();
 
 

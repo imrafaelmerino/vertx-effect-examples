@@ -43,12 +43,14 @@ public class SignUpModule extends VertxModule {
 
         deploy(signupAddress,
                SignUpLambda.builder()
-                           .count(clientModule.countAll)
+                           .count(() -> clientModule.countAll.apply(null))
                            .findByEmail(clientModule.findByEmail)
                            .getAddresses(geolocationModule.getAddresses)
-                           .getTimestamp(functionsModule.getTimestamp)
+                           .getTimestamp(() -> functionsModule.getTimestamp.apply(null))
                            .insert(clientModule.insert)
                            .sendEmail(emailModule.sendEmail)
+                           .parseToJson(functionsModule.str2JsObj)
+                           .createTimer(d -> vertxRef.sleep(d))
                            .build());
     }
 

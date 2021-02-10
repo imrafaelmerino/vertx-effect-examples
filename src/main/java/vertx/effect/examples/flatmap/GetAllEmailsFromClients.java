@@ -3,7 +3,6 @@ package vertx.effect.examples.flatmap;
 
 import jsonvalues.JsArray;
 import vertx.effect.Val;
-import vertx.effect.exp.Cons;
 import vertx.effect.λ;
 
 import static java.util.Objects.requireNonNull;
@@ -21,7 +20,7 @@ public class GetAllEmailsFromClients implements λ<JsArray, JsArray> {
     public Val<JsArray> apply(final JsArray clientsIds) {
         return clientsIds.streamValues()
                          .map(val -> val.toJsStr().value)
-                         .reduce(Cons.success(JsArray.empty()),
+                         .reduce(Val.succeed(JsArray.empty()),
                                  (acc, clientId) ->
                                          acc.flatMap(emails -> getClientEmails.apply(clientId)
                                                                               .map(emails::appendAll)

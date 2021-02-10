@@ -5,7 +5,7 @@ import io.vertx.core.eventbus.ReplyException;
 import io.vertx.core.eventbus.ReplyFailure;
 import jsonvalues.JsObj;
 import vertx.effect.Val;
-import vertx.effect.exp.Cons;
+
 import vertx.effect.λ;
 
 import javax.mail.MessagingException;
@@ -15,7 +15,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.util.Objects;
 import java.util.Properties;
 
 import static java.util.Objects.requireNonNull;
@@ -82,40 +81,40 @@ class SendEmailLambda implements λ<JsObj, Void> {
                                   msg.getAllRecipients()
             );
 
-            return Cons.NULL;
+            return Val.NULL;
 
         } catch (MailConnectException e) {
             if (e.getCause() != null) {
                 if (e.getCause() instanceof UnknownHostException) {
-                    return Cons.failure(new ReplyException(ReplyFailure.RECIPIENT_FAILURE,
-                                                           EmailFailures.UNKNOWN_HOST,
-                                                           e.getMessage()));
+                    return Val.fail(new ReplyException(ReplyFailure.RECIPIENT_FAILURE,
+                                                       EmailFailures.UNKNOWN_HOST,
+                                                       e.getMessage()));
                 }
                 if (e.getCause() instanceof SocketTimeoutException) {//connection timeout
-                    return Cons.failure(new ReplyException(ReplyFailure.RECIPIENT_FAILURE,
+                    return Val.fail(new ReplyException(ReplyFailure.RECIPIENT_FAILURE,
                                                            EmailFailures.CONNECTION_TIMEOUT,
                                                            e.getMessage()));
                 }
 
             }
 
-            return Cons.failure(e);
+            return Val.fail(e);
         } catch (MessagingException e) {//
             if (e.getCause() instanceof SocketTimeoutException) {
-                return Cons.failure(new ReplyException(ReplyFailure.RECIPIENT_FAILURE,
+                return Val.fail(new ReplyException(ReplyFailure.RECIPIENT_FAILURE,
                                                        EmailFailures.REQ_TIMEOUT,
                                                        e.getMessage()
                 ));
             }
-            return Cons.failure(e);
+            return Val.fail(e);
         } catch (Exception e) {
-            return Cons.failure(e);
+            return Val.fail(e);
         } finally {
             if (transport != null) {
                 try {
                     transport.close();
                 } catch (MessagingException e) {
-                    return Cons.failure(e);
+                    return Val.fail(e);
                 }
             }
         }

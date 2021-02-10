@@ -12,7 +12,6 @@ import io.vertx.ext.shell.term.TelnetTermOptions;
 import jsonvalues.JsObj;
 import vertx.effect.Failures;
 import vertx.effect.RegisterJsValuesCodecs;
-import vertx.effect.RetryPolicy;
 import vertx.effect.VertxRef;
 import vertx.effect.examples.FunctionsModule;
 import vertx.effect.examples.codecs.RegisterInstantCodec;
@@ -23,10 +22,8 @@ import vertx.mongodb.effect.MongoVertxClient;
 
 import java.util.Optional;
 import java.util.Properties;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
 import static vertx.effect.examples.signup.MainInputs.*;
 import static vertx.effect.examples.signup.SignupFailures.CLIENT_EXISTS;
 
@@ -41,9 +38,7 @@ public class Main {
     private static SendEmailModule emailModule;
     private static SignUpModule signUpModule;
 
-    private static final Function<Integer, RetryPolicy<Throwable>> retryPolicy =
-            attempts -> (error, remaining) -> vertxRef.delay(7,
-                                                             SECONDS);
+
 
     public static void main(String[] args) {
         vertx = Vertx.vertx();
@@ -95,11 +90,7 @@ public class Main {
                                                MONGODB_CLIENT_COLLECTION);
 
         return ClientDAOModule.builder()
-                              .insertFailureAttempts(MONGODB_INSERT_FAILURE_ATTEMPTS)
                               .maxQueryTime(MONGODB_MAX_QUERY_TIME)
-                              .queriesFailureAttempts(MONGODB_QUERY_FAILURE_ATTEMPTS)
-                              .insertRetryPolicy(retryPolicy)
-                              .queryRetryPolicy(retryPolicy)
                               .collectionSupplier(collectionSupplier)
                               .build();
     }
@@ -113,10 +104,7 @@ public class Main {
                                                                 .setDefaultPort(443)
                                                                 .setConnectTimeout(GEOCODE_API_CONNECT_TIMEOUT)
                                 )
-                                .failureAttempts(GEOCODE_API_FAILURE_ATTEMPTS)
-                                .not2XXAttempts(GEOCODE_API_NOT_2XX_ATTEMPTS)
                                 .reqTimeout(GEOCODE_API_REQ_TIMEOUT)
-                                .retryPolicy(retryPolicy)
                                 .build();
     }
 
@@ -208,7 +196,6 @@ public class Main {
                 .host(EMAIL_API_HOST)
                 .user(EMAIL_API_USER)
                 .password(EMAIL_API_PASSWORD.getBytes())
-                .instances(EMAIL_VERTICLE_INSTANCES)
                 .props(props).build();
     }
 }

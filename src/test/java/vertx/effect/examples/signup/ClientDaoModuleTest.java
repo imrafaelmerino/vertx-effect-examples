@@ -10,12 +10,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import vertx.effect.RegisterJsValuesCodecs;
-import vertx.effect.RetryPolicy;
 import vertx.effect.VertxRef;
 import vertx.effect.exp.Triple;
 import vertx.mongodb.effect.MongoVertxClient;
 
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -34,9 +32,7 @@ public class ClientDaoModuleTest {
         vertxRef.registerConsumer(VertxRef.EVENTS_ADDRESS,
                                   System.out::println);
 
-        Function<Integer, RetryPolicy<Throwable>> retryPolicy =
-                attempts -> (error, remaining) -> vertxRef.delay(1,
-                                                                 SECONDS);
+
 
         String connection = "mongodb://localhost:27017/?connectTimeoutMS=3000&socketTimeoutMS=3000&serverSelectionTimeoutMS=10000";
 
@@ -48,8 +44,6 @@ public class ClientDaoModuleTest {
 
         daoModule = ClientDAOModule.builder()
                                    .collectionSupplier(collectionSupplier)
-                                   .queryRetryPolicy(retryPolicy)
-                                   .queriesFailureAttempts(2)
                                    .build();
 
         Triple.sequential(vertxRef.deployVerticle(new RegisterJsValuesCodecs()),

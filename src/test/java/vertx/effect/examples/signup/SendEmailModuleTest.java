@@ -59,7 +59,6 @@ public class SendEmailModuleTest {
                                      .password(System.getProperty("EMAIL_API_PASSWORD",
                                                                   "")
                                                      .getBytes())
-                                     .instances(2)
                                      .sendEmailAddress("email-send")
                                      .validateEmailAddress("email-validate")
                                      .props(props)

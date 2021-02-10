@@ -23,7 +23,7 @@ public class FunctionsModule extends VertxModule {
     protected void deploy() {
 
         deploy(GET_TIMESTAMP_ADDRESS,
-               Functions.getTimestamp);
+               Functions.timeStamp);
 
         deploy(STR_TO_JSOBJ_ADDRESS,
                Functions.str2JsObj);

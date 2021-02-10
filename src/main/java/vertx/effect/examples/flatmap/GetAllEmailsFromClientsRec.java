@@ -5,10 +5,8 @@ import jsonvalues.JsArray;
 import jsonvalues.JsObj;
 import jsonvalues.Lens;
 import vertx.effect.Val;
-import vertx.effect.exp.Cons;
 import vertx.effect.exp.JsObjExp;
 import vertx.effect.λ;
-import  io.vertx.core.Vertx;
 
 import java.util.function.Function;
 
@@ -39,11 +37,11 @@ public class GetAllEmailsFromClientsRec implements λ<JsArray, JsArray> {
     private λ<JsObj, JsObj> getCustomerEmailsRec() {
         return input -> {
             JsArray ids = idsLens.get.apply(input);
-            if (ids.isEmpty()) return Cons.success(input);
+            if (ids.isEmpty()) return Val.succeed(input);
             String id = ids.head()
                            .toJsStr().value;
             return JsObjExp.sequential(IDS_FIELD,
-                                       Cons.success(ids.tail()),
+                                       Val.succeed(ids.tail()),
                                        ACC_FIELD,
                                        this.getClientEmails.apply(id)
                                                            .map(emails -> accEmails(emails).apply(input))

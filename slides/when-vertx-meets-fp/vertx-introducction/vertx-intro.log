@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.4)  26 JAN 2021 21:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.4)  29 JAN 2021 20:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -745,20 +745,20 @@ y)
 sty)) (./vertx-intro.aux)
 \openout1 = `vertx-intro.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -826,7 +826,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring OFF on input line 60.
+Package hyperref Info: Link coloring OFF on input line 79.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -836,71 +836,71 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count181
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 79.
+LaTeX Info: Redefining \pageref on input line 79.
+LaTeX Info: Redefining \nameref on input line 79.
 
 (./vertx-intro.out) (./vertx-intro.out)
 \@outlinefile=\write5
 \openout5 = `vertx-intro.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 60.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 79.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 60.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 79.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 60.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 79.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 60.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 60.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 79.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 60.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 60.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 79.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 60.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 60.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 79.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 60.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 60.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 79.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 60.
+(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 79.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 60.
+(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 60.
+(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/bx/n --> T1/cmss/bx/n on input line 60.
+(Font)                  T1/cmss/bx/n --> T1/cmss/bx/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 60.
+(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 60.
+(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 60.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 60.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 79.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 79.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 60
+(Font)              `pureletters' in the math version `normal' on input line 79
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 60
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 79
 .
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 60.
+(Font)              `pureletters' in the math version `bold' on input line 79.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 6
-0.
+(Font)                  T1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 7
+9.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 60.
+ut line 79.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -928,781 +928,767 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 \c@lstlisting=\count182
  (./vertx-intro.nav)
-Overfull \hbox (3.94077pt too wide) in paragraph at lines 60--60
- [][][][]  
- []
+<images/logo.png, id=40, 1003.75pt x 1003.75pt>
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 81.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [1
 
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[1
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
+s/logo.png (PNG copy)>]
 (./vertx-intro.toc)
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[2
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[3
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 86.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [2
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[4
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[5
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 88.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [3
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[6
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[7
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [4
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[8
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[9
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [5
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[10
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[11
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [6
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[12
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[13
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [7
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [8
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [9
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [10
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [11
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [12
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [13
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 113.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
 
 [14
 
 ]
-<images/flow-1.png, id=696, 301.125pt x 331.2375pt>
+<images/flow-1.png, id=396, 301.125pt x 331.2375pt>
 File: images/flow-1.png Graphic file (type png)
 <use images/flow-1.png>
-Package pdftex.def Info: images/flow-1.png  used on input line 105.
+Package pdftex.def Info: images/flow-1.png  used on input line 124.
 (pdftex.def)             Requested size: 120.44786pt x 132.49265pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[15
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 124.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [15
 
  <./images/flow-1.png>]
 File: images/flow-1.png Graphic file (type png)
 <use images/flow-1.png>
-Package pdftex.def Info: images/flow-1.png  used on input line 105.
+Package pdftex.def Info: images/flow-1.png  used on input line 124.
 (pdftex.def)             Requested size: 120.44786pt x 132.49265pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[16
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 124.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [16
 
 ]
 File: images/flow-1.png Graphic file (type png)
 <use images/flow-1.png>
-Package pdftex.def Info: images/flow-1.png  used on input line 105.
+Package pdftex.def Info: images/flow-1.png  used on input line 124.
 (pdftex.def)             Requested size: 120.44786pt x 132.49265pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[17
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 124.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [17
 
 ]
-<images/flow-2.png, id=793, 478.78876pt x 340.27126pt>
+<images/flow-2.png, id=430, 478.78876pt x 340.27126pt>
 File: images/flow-2.png Graphic file (type png)
 <use images/flow-2.png>
-Package pdftex.def Info: images/flow-2.png  used on input line 117.
+Package pdftex.def Info: images/flow-2.png  used on input line 136.
 (pdftex.def)             Requested size: 191.5121pt x 136.10608pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[18
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 136.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [18
 
  <./images/flow-2.png>]
 File: images/flow-2.png Graphic file (type png)
 <use images/flow-2.png>
-Package pdftex.def Info: images/flow-2.png  used on input line 117.
+Package pdftex.def Info: images/flow-2.png  used on input line 136.
 (pdftex.def)             Requested size: 191.5121pt x 136.10608pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[19
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 136.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [19
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 139.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
 
 [20
 
 ]
-<images/actor_model_paper.png, id=887, 511.9125pt x 361.35pt>
+<images/actor_model_paper.png, id=460, 511.9125pt x 361.35pt>
 File: images/actor_model_paper.png Graphic file (type png)
 <use images/actor_model_paper.png>
-Package pdftex.def Info: images/actor_model_paper.png  used on input line 125.
+Package pdftex.def Info: images/actor_model_paper.png  used on input line 144.
 (pdftex.def)             Requested size: 255.95563pt x 180.67456pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[21
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 144.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [21
 
  <./images/actor_model_paper.png>]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[22
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[23
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 154.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [22
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[24
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[25
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 154.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [23
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[26
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[27
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 154.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [24
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 154.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [25
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 167.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [26
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 167.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [27
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 167.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
 
 [28
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[29
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[30
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 167.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [29
 
 ]
-<images/joe_and_alan.jpg, id=1234, 1204.5pt x 803.0pt>
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 167.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [30
+
+]
+<images/joe_and_alan.jpg, id=596, 1204.5pt x 803.0pt>
 File: images/joe_and_alan.jpg Graphic file (type jpg)
 <use images/joe_and_alan.jpg>
-Package pdftex.def Info: images/joe_and_alan.jpg  used on input line 155.
+Package pdftex.def Info: images/joe_and_alan.jpg  used on input line 174.
 (pdftex.def)             Requested size: 301.12427pt x 200.74951pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[31
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 174.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [31
 
  <./images/joe_and_alan.jpg>]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[32
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[33
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 176.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [32
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[34
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[35
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 186.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [33
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[36
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 186.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [34
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 186.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [35
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 186.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [36
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
 
 [37
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[38
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[39
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [38
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[40
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[41
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [39
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[42
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[43
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [40
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[44
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[45
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [41
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[46
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[47
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [42
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[48
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[49
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [43
 
 ]
-<images/vertx-model-1.png, id=1972, 381.425pt x 376.40625pt>
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [44
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 202.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [45
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 214.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [46
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 214.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [47
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 214.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [48
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 214.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [49
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 214.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [50
+
+]
+<images/vertx-model-1.png, id=953, 381.425pt x 376.40625pt>
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 211.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 231.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[50
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 231.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [51
 
  <./images/vertx-model-1.png>]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 211.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 231.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[51
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 231.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [52
 
 ]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 211.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 231.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[52
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 231.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [53
 
 ]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 211.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 231.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[53
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 231.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [54
 
 ]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 211.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 231.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[54
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 231.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [55
 
 ]
 File: images/vertx-model-1.png Graphic file (type png)
 <use images/vertx-model-1.png>
-Package pdftex.def Info: images/vertx-model-1.png  used on input line 211.
+Package pdftex.def Info: images/vertx-model-1.png  used on input line 231.
 (pdftex.def)             Requested size: 114.42838pt x 112.92273pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[55
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 231.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [56
 
 ]
-<images/vertx-model-2.png, id=2205, 341.275pt x 361.35pt>
+<images/vertx-model-2.png, id=1058, 341.275pt x 361.35pt>
 File: images/vertx-model-2.png Graphic file (type png)
 <use images/vertx-model-2.png>
-Package pdftex.def Info: images/vertx-model-2.png  used on input line 222.
+Package pdftex.def Info: images/vertx-model-2.png  used on input line 242.
 (pdftex.def)             Requested size: 102.38329pt x 108.40584pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[56
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 242.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [57
 
  <./images/vertx-model-2.png>]
 File: images/vertx-model-2.png Graphic file (type png)
 <use images/vertx-model-2.png>
-Package pdftex.def Info: images/vertx-model-2.png  used on input line 222.
+Package pdftex.def Info: images/vertx-model-2.png  used on input line 242.
 (pdftex.def)             Requested size: 102.38329pt x 108.40584pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[57
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 242.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [58
 
 ]
-<images/vertx-model-3.png, id=2271, 461.725pt x 331.2375pt>
+<images/vertx-model-3.png, id=1083, 461.725pt x 331.2375pt>
 File: images/vertx-model-3.png Graphic file (type png)
 <use images/vertx-model-3.png>
-Package pdftex.def Info: images/vertx-model-3.png  used on input line 234.
+Package pdftex.def Info: images/vertx-model-3.png  used on input line 254.
 (pdftex.def)             Requested size: 138.51857pt x 99.37201pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[58
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 254.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [59
 
  <./images/vertx-model-3.png>]
 File: images/vertx-model-3.png Graphic file (type png)
 <use images/vertx-model-3.png>
-Package pdftex.def Info: images/vertx-model-3.png  used on input line 234.
+Package pdftex.def Info: images/vertx-model-3.png  used on input line 254.
 (pdftex.def)             Requested size: 138.51857pt x 99.37201pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[59
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[60
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 254.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [60
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[61
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[62
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 263.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [61
 
 ]
-<images/vertx-json-codec.png, id=2438, 435.6275pt x 80.3pt>
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 263.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [62
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 263.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [63
+
+]
+<images/vertx-json-codec.png, id=1143, 435.6275pt x 80.3pt>
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 265.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
-<images/jsvalues-codec.png, id=2441, 342.27875pt x 80.3pt>
+<images/jsvalues-codec.png, id=1146, 342.27875pt x 80.3pt>
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 265.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[63
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 285.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [64
 
  <./images/vertx-json-codec.png> <./images/jsvalues-codec.png>]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 265.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 265.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[64
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 285.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [65
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 265.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 265.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[65
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 285.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [66
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 265.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 265.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[66
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 285.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [67
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 265.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 265.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[67
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 285.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [68
 
 ]
 File: images/vertx-json-codec.png Graphic file (type png)
 <use images/vertx-json-codec.png>
-Package pdftex.def Info: images/vertx-json-codec.png  used on input line 265.
+Package pdftex.def Info: images/vertx-json-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 217.81322pt x 40.14989pt.
 File: images/jsvalues-codec.png Graphic file (type png)
 <use images/jsvalues-codec.png>
-Package pdftex.def Info: images/jsvalues-codec.png  used on input line 265.
+Package pdftex.def Info: images/jsvalues-codec.png  used on input line 285.
 (pdftex.def)             Requested size: 171.13895pt x 40.14989pt.
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 285.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
 
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[68
+[69
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 282.
+LaTeX Font Info:    Try loading font information for U+msa on input line 302.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 282.
+LaTeX Font Info:    Try loading font information for U+msb on input line 302.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 282.
+line 302.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[69
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[70
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [70
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[71
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[72
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [71
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[73
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[74
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [72
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[75
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[76
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [73
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[77
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[78
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [74
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[79
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[80
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [75
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[81
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[82
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [76
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[83
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [77
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 302.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [78
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 311.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [79
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 311.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [80
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 311.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [81
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 313.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [82
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 323.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [83
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 323.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
 
 [84
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 323.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [85
 
-[85
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 323.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [86
 
 ]
 File: images/flow-2.png Graphic file (type png)
 <use images/flow-2.png>
-Package pdftex.def Info: images/flow-2.png  used on input line 309.
+Package pdftex.def Info: images/flow-2.png  used on input line 329.
 (pdftex.def)             Requested size: 191.5121pt x 136.10608pt.
-
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[86
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 329.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [87
 
 ]
 \openout4 = `vertx-intro.vrb'.
@@ -1716,106 +1702,129 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 2.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ))
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[87
-
-
-] (./vertx-intro.vrb)
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[88
-
-
-] (./vertx-intro.vrb)
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[89
-
-
-] (./vertx-intro.vrb)
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[90
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 355.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [88
 
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+(./vertx-intro.vrb)
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 355.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [89
 
-[91
+
+] (./vertx-intro.vrb)
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 355.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [90
+
+
+] (./vertx-intro.vrb)
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 355.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [91
+
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 358.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
 
 [92
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[93
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[94
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [93
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[95
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[96
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [94
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[97
-
-]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[98
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [95
 
 ]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [96
 
-[99
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [97
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [98
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [99
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 373.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [100
+
+]
+./vertx-intro.tex:436: Misplaced alignment tab character &.
+<inserted text> ...trong-alan-kay} Joe Armstrong &
+                                                   Alan Kay - Joe Armstrong ...
+l.436 \end{frame}
+                 
+? 
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 436
+.
+LaTeX Font Info:    No file OMScmss.fd. on input line 436.
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 436.
+
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 436.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+[101
 
  </usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamericononline.pdf>]
-Overfull \hbox (3.94077pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[100
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 436.
+(pdftex.def)             Requested size: 34.1393pt x 34.14322pt.
+ [102
 
 
  </usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamericonbook.pdf>]
@@ -1828,43 +1837,45 @@ Overfull \hbox (3.94077pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `vertx-intro.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
-
-(./vertx-intro.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
+ (./vertx-intro.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
 Package rerunfilecheck Info: File `vertx-intro.out' has not changed.
-(rerunfilecheck)             Checksum: 49564C2EB2098D139909F5B7429A2341;248.
+(rerunfilecheck)             Checksum: 4D0BFA113C18337ECA6DEB88BE671CCB;234.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
  ) 
 Here is how much of TeX's memory you used:
- 19940 strings out of 492616
- 368799 string characters out of 6129482
- 673566 words of memory out of 5000000
- 23171 multiletter control sequences out of 15000+600000
+ 19937 strings out of 492616
+ 368157 string characters out of 6129482
+ 672044 words of memory out of 5000000
+ 23159 multiletter control sequences out of 15000+600000
  28167 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,65p,795b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,14n,65p,795b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></u
 sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2019
-/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on vertx-intro.pdf (100 pages, 887280 bytes).
+local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on vertx-intro.pdf (102 pages, 800537 bytes).
 PDF statistics:
- 4066 PDF objects out of 4296 (max. 8388607)
- 3297 compressed objects within 33 object streams
- 212 named destinations out of 1000 (max. 500000)
- 3554 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2012 PDF objects out of 2073 (max. 8388607)
+ 1238 compressed objects within 13 object streams
+ 219 named destinations out of 1000 (max. 500000)
+ 3703 words of extra memory for PDF output out of 10000 (max. 10000000)
 

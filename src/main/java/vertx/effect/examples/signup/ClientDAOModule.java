@@ -6,15 +6,13 @@ import jsonvalues.JsObj;
 import jsonvalues.JsStr;
 import lombok.Builder;
 import vertx.effect.*;
-import vertx.effect.exp.Cons;
 import vertx.mongodb.effect.*;
 import vertx.mongodb.effect.functions.Count;
 import vertx.mongodb.effect.functions.FindOne;
 import vertx.mongodb.effect.functions.InsertOne;
-
 import java.util.Optional;
-import java.util.function.Function;
 import java.util.function.Supplier;
+
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static vertx.effect.examples.signup.ClientEntity.ADDRESS_FIELD;
@@ -28,21 +26,13 @@ public class ClientDAOModule extends MongoModule {
     private static final String DEFAULT_COUNT_ALL_ADDRESS = "count_all_clients";
     private static final int DEFAULT_INSERT_INSTANCES = 1;
     private static final int DEFAULT_MAX_QUERY_TIME = 4000;
-    private static final int DEFAULT_INSERT_FAILURE_ATTEMPTS = 3;
-    private static final int DEFAULT_QUERIES_FAILURE_ATTEMPTS = 3;
-    private static final Function<Integer, RetryPolicy<Throwable>> DEFAULT_INSERT_RETRY_POLICY =
-            attempts -> (error, remaining) -> Cons.NULL;
-    private static final Function<Integer, RetryPolicy<Throwable>> DEFAULT_QUERY_RETRY_POLICY =
-            attempts -> (error, remaining) -> Cons.NULL;
     private final String insertAddress;
     private final String findByEmailAddress;
     private final String countAllAddress;
     private final int insertInstances;
     private final int maxQueryTime;
-    private final int insertFailureAttempts;
-    private final int queriesFailureAttempts;
-    private final Function<Integer, RetryPolicy<Throwable>> insertRetryPolicy;
-    private final Function<Integer, RetryPolicy<Throwable>> queryRetryPolicy;
+
+
 
     public λ<JsObj, String> insert;
     public λ<String, Optional<JsObj>> findByEmail;
@@ -55,10 +45,6 @@ public class ClientDAOModule extends MongoModule {
                            final String countAllAddress,
                            final int insertInstances,
                            final int maxQueryTime,
-                           final int insertFailureAttempts,
-                           final int queriesFailureAttempts,
-                           final Function<Integer, RetryPolicy<Throwable>> insertRetryPolicy,
-                           final Function<Integer, RetryPolicy<Throwable>> queryRetryPolicy,
                            final Supplier<MongoCollection<JsObj>> collectionSupplier) {
         super(collectionSupplier);
         this.insertAddress = insertAddress == null ? DEFAULT_INSERT_ADDRESS : insertAddress;
@@ -66,10 +52,6 @@ public class ClientDAOModule extends MongoModule {
         this.countAllAddress = countAllAddress == null ? DEFAULT_COUNT_ALL_ADDRESS : countAllAddress;
         this.insertInstances = insertInstances > 0 ? insertInstances : DEFAULT_INSERT_INSTANCES;
         this.maxQueryTime = maxQueryTime > 0 ? maxQueryTime : DEFAULT_MAX_QUERY_TIME;
-        this.insertFailureAttempts = insertFailureAttempts > 0 ? insertFailureAttempts : DEFAULT_INSERT_FAILURE_ATTEMPTS;
-        this.queriesFailureAttempts = queriesFailureAttempts > 0 ? queriesFailureAttempts : DEFAULT_QUERIES_FAILURE_ATTEMPTS;
-        this.insertRetryPolicy = insertRetryPolicy == null ? DEFAULT_INSERT_RETRY_POLICY : insertRetryPolicy;
-        this.queryRetryPolicy = queryRetryPolicy == null ? DEFAULT_QUERY_RETRY_POLICY : queryRetryPolicy;
     }
 
     @Override
@@ -79,11 +61,7 @@ public class ClientDAOModule extends MongoModule {
                                                    Converters.insertOneResult2HexId);
 
         λ<JsObj, String> resilientInsert =
-                client -> insert.apply(client)
-                                .retry(Failures.anyOf(MongoFailures.MONGO_CONNECT_TIMEOUT_CODE,
-                                                      MongoFailures.MONGO_READ_TIMEOUT_CODE),
-                                       insertFailureAttempts,
-                                       insertRetryPolicy.apply(insertFailureAttempts));
+                client -> insert.apply(client);
         deploy(insertAddress,
                resilientInsert,
                new DeploymentOptions().setInstances(insertInstances));
@@ -102,9 +80,7 @@ public class ClientDAOModule extends MongoModule {
     protected void initialize() {
 
         this.insert = client -> this.<JsObj, String>ask(insertAddress)
-                .apply(client)
-                .retry(Failures.anyOf(MongoFailures.MONGO_CONNECT_TIMEOUT_CODE),
-                       3);
+                .apply(client);
 
 
         this.findByEmail = e -> vertxRef.spawn(findByEmailAddress,
@@ -118,11 +94,7 @@ public class ClientDAOModule extends MongoModule {
                                new Count(collectionSupplier));
 
         this.countAll = message ->
-                count.apply(JsObj.empty())
-                     .retry(Failures.anyOf(MongoFailures.MONGO_CONNECT_TIMEOUT_CODE,
-                                           MongoFailures.MONGO_READ_TIMEOUT_CODE),
-                            queriesFailureAttempts,
-                            queryRetryPolicy.apply(queriesFailureAttempts));
+                count.apply(JsObj.empty());
 
     }
 
@@ -139,11 +111,7 @@ public class ClientDAOModule extends MongoModule {
                                                                    .maxTime(maxQueryTime,
                                                                             MILLISECONDS)
                                                                    .create());
-            return val
-                    .retry(Failures.anyOf(MongoFailures.MONGO_CONNECT_TIMEOUT_CODE,
-                                          MongoFailures.MONGO_READ_TIMEOUT_CODE),
-                           queriesFailureAttempts,
-                           queryRetryPolicy.apply(queriesFailureAttempts));
+            return val;
         };
     }
 

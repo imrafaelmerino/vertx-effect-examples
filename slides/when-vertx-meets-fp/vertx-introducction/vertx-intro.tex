@@ -51,10 +51,29 @@
   \end{frame}
 }
 
-\title{Game of Verticles I: Introduction to Vert.x}
+%gets rid of bottom navigation bars
+\setbeamertemplate{footline}[frame number]{}
+
+%gets rid of bottom navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%gets rid of footer
+%will override 'frame number' instruction above
+%comment out to revert to previous/default definitions
+\setbeamertemplate{footline}{}
+
+
+\title{vertx-effect}
+\subtitle{Introduction to Vert.x}
+
 \author{Rafael Merino García}
-\institute{@imrafaelmerino}
+
+\institute{Github: \href{https://github.com/whocares/imrafaelmerino}{imrafaelmerino}}
+
 \date{2021}
+
+\logo{\includegraphics[height=1.2cm]{images/logo.png}}
+
 
 
 \begin{document}
@@ -186,10 +205,11 @@
 \begin{frame}
 \frametitle{Message passing}
 \begin{itemize}
-\item<1-> Message passing is assumed to be \textbf{atomic} which means that a message is either delivered in its entirety or not at all
-\item<2-> Message passing between a pair of verticles is assumed to be ordered: \textbf{the messages will be received in the same order they were sent}
-\item<3-> Messages \textbf{should not contain references to data structures contained within verticles}—they should only contain constants and/or address
-\item<4->\textbf{send and pray} semantics. We send the message and pray that it arrives
+\item<1-> Don't communicate by sharing memory, share memory by communicating
+\item<2-> Message passing is assumed to be \textbf{atomic} which means that a message is either delivered in its entirety or not at all
+\item<3-> Message passing between a pair of verticles is assumed to be ordered: \textbf{the messages will be received in the same order they were sent}
+\item<4-> Messages \textbf{should not contain references to data structures contained within verticles}—they should only contain constants and/or address
+\item<5->\textbf{send and pray} semantics. We send the message and pray that it arrives
 \end{itemize}
 \end{frame}
 
@@ -345,9 +365,10 @@ What we will do in the next session:
 \item<2->  Expressions
 \item<3->  Lambdas
 \item<4->  Deploying verticles and modules
-\item<5->  Reactive http client
-\item<6->  Wrapping existing libraries with lambdas: vertx-mongodb-effect
-\item<7->  Implementing complex flows
+\item<5->  Logging
+\item<6->  Reactive http client
+\item<7->  Wrapping existing libraries with lambdas: vertx-mongodb-effect
+\item<8->  Implementing complex flows
 \end{itemize}
 \end{frame}
 
@@ -381,6 +402,31 @@ Dr. Alan Kay on the Meaning of “Object-Oriented Programming”.
 Joe Armstrong explaining that they weren't interested in, or worried about, the actor model while creating Erlang.
 
 \url{http://erlang.org/pipermail/erlang-questions/2014-June/079891.html}
+
+\bibitem{joe-armstrong-multicores} 
+How we program multicores - Joe Armstrong
+
+\url{https://www.youtube.com/watch?v=bo5WL5IQAd0&t=3099s}
+
+\bibitem{joe-armstrong-alan-kay} 
+Joe Armstrong & Alan Kay - Joe Armstrong interviews Alan Kay
+
+\url{https://www.youtube.com/watch?v=fhOHn9TClXY}
+
+\bibitem{pony} 
+Scott Lystig Fritchie - The wide world of almost-actors: comparing the Pony to BEAM languages
+
+\url{https://www.youtube.com/watch?v=_0m0_qtfzLs}
+
+\bibitem{joe-armstrong-multicores} 
+GOTO 2018 • The Do's and Don'ts of Error Handling • Joe Armstrong
+
+\url{https://www.youtube.com/watch?v=TTM_b7EJg5E&t=109s}
+
+
+
+
+
 
 \setbeamertemplate{bibliography item}[book]
 \bibitem{joe-armstrong-book} 
